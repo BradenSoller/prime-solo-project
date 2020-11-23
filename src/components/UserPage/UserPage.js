@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import useReduxStore from '../../redux/useReduxStore';
 
-class UserPage extends Component {
-  // this component doesn't do much to start, just renders some user info to the DOM
-  render() {
-    return (
-      <div>
-        <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-        <p>Your ID is: {this.props.store.user.id}</p>
-        <LogOutButton className="log-in" />
-      </div>
-    );
-  }
+const UserPage = () => {
+  // this component doesn't do much to start, just renders some user reducer info to the DOM
+
+  const store = useReduxStore();
+  return (
+    <div>
+      <h1 id="welcome">Welcome, {store.user.username}!</h1>
+      <p>Your ID is: {store.user.id}</p>
+      <LogOutButton className="log-in" />
+    </div>
+  );
 }
 
+
+
+
 // this allows us to use <App /> in index.js
-export default connect(mapStoreToProps)(UserPage);
+export default UserPage;

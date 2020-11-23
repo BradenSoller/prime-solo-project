@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
+import {useHistory} from 'react-router-dom';
 
-class LoginPage extends Component {
-  render() {
+const LoginPage = () => {
+    const history = useHistory();
+
     return (
       <div>
         <LoginForm />
@@ -14,7 +14,7 @@ class LoginPage extends Component {
             type="button"
             className="btn btn_asLink"
             onClick={() => {
-              this.props.history.push('/registration');
+              history.push('/registration');
             }}
           >
             Register
@@ -23,6 +23,6 @@ class LoginPage extends Component {
       </div>
     );
   }
-}
 
-export default connect(mapStoreToProps)(LoginPage);
+
+export default LoginPage;

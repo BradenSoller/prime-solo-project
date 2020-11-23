@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import useReduxStore from '../../redux/useReduxStore';
 
 const Nav = (props) => {
+
+  const store = useReduxStore();
+  console.log(store)
   let loginLinkData = {
     path: '/login',
     text: 'Login / Register',
   };
 
-  if (props.store.user.id != null) {
+  if (store.user.id != null) {
     loginLinkData.path = '/user';
     loginLinkData.text = 'Home';
   }
@@ -29,7 +31,7 @@ const Nav = (props) => {
           {loginLinkData.text}
         </Link>
         {/* Show the link to the info page and the logout button if the user is logged in */}
-        {props.store.user.id && (
+        {store.user.id && (
           <>
             <Link className="nav-link" to="/info">
               Info Page
@@ -46,4 +48,4 @@ const Nav = (props) => {
   );
 };
 
-export default connect(mapStoreToProps)(Nav);
+export default Nav;

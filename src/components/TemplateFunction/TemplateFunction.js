@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import useReduxStore from '../../redux/useReduxStore';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
@@ -8,6 +7,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 function TemplateFunction(props) {
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
+  const store = useReduxStore();
   const [heading, setHeading] = useState('Functional Component');
 
   return (
@@ -17,4 +17,4 @@ function TemplateFunction(props) {
   );
 }
 
-export default connect(mapStoreToProps)(TemplateFunction);
+export default TemplateFunction;

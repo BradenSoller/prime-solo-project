@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
 import LoginPage from '../LoginPage/LoginPage';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import useReduxStore from '../../redux/useReduxStore';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
 // Responsible for watching redux state, and returning an appropriate component
@@ -15,6 +14,9 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // and by checking req.user for authorization
 
 const ProtectedRoute = (props) => {
+  
+  const store = useReduxStore();
+
   // Using destructuring, this takes ComponentToProtect from component
   // prop and grabs all other props to pass them along to Route
   const {
@@ -22,7 +24,6 @@ const ProtectedRoute = (props) => {
     component: ComponentToProtect,
     // redirect path to be used if the user is authorized
     authRedirect,
-    store,
     ...otherProps
   } = props;
 
@@ -56,4 +57,4 @@ const ProtectedRoute = (props) => {
   );
 };
 
-export default connect(mapStoreToProps)(ProtectedRoute);
+export default ProtectedRoute;
