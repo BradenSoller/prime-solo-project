@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage';
-import useReduxStore from '../../redux/useReduxStore';
+import useReduxStore from '../../hooks/useReduxStore';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
 // Responsible for watching redux state, and returning an appropriate component
@@ -14,7 +14,7 @@ import useReduxStore from '../../redux/useReduxStore';
 // and by checking req.user for authorization
 
 const ProtectedRoute = (props) => {
-  
+
   const store = useReduxStore();
 
   // Using destructuring, this takes ComponentToProtect from component

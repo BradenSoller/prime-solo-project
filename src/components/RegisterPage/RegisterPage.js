@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 

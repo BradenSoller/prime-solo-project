@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useReduxStore from '../../redux/useReduxStore';
+import useReduxStore from '../../hooks/useReduxStore';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
