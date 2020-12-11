@@ -4,10 +4,10 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import useReduxStore from '../../hooks/useReduxStore';
 
-const Nav = (props) => {
+const Nav = () => {
 
   const store = useReduxStore();
-  console.log(store)
+
   let loginLinkData = {
     path: '/login',
     text: 'Login / Register',

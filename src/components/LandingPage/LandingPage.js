@@ -31,7 +31,7 @@ const LandingPage = () => {
             nunc interdum, eu interdum justo facilisis. Sed pulvinar nulla ac
             dignissim efficitur. Quisque eget eros metus. Vestibulum bibendum
             fringilla nibh a luctus. Duis a sapien metus.
-            </p>
+          </p>
 
           <p>
             Praesent consectetur orci dui, id elementum eros facilisis id. Sed
@@ -42,7 +42,7 @@ const LandingPage = () => {
             euismod, augue at condimentum rhoncus, massa lorem semper lacus,
             sed lobortis augue mi vel felis. Duis ultrices sapien at est
             convallis congue.
-            </p>
+          </p>
 
           <p>
             Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
@@ -51,7 +51,7 @@ const LandingPage = () => {
             Sed sagittis neque id diam euismod, ut egestas felis ultricies.
             Nullam non fermentum mauris. Sed in enim ac turpis faucibus
             pretium in sit amet nisi.
-            </p>
+          </p>
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />
@@ -60,7 +60,7 @@ const LandingPage = () => {
             <h4>Already a Member?</h4>
             <button className="btn btn_sizeSm" onClick={onLogin}>
               Login
-              </button>
+            </button>
           </center>
         </div>
       </div>
