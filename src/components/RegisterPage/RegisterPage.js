@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useHistory } from "react-router-dom";
-// CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 const RegisterPage = () => {
@@ -21,7 +20,7 @@ const RegisterPage = () => {
           }}
         >
           Login
-          </button>
+        </button>
       </center>
     </div>
   );
