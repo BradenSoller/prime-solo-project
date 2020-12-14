@@ -3,7 +3,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-const RegisterPage = () => {
+function RegisterPage() {
 
   const history = useHistory();
 

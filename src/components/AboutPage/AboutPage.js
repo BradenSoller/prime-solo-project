@@ -5,12 +5,14 @@ import React from 'react';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is'
 
-const AboutPage = () => (
-  <div className="container">
-    <div>
-      <p>This about page is for anyone to read!</p>
+function AboutPage() {
+  return (
+    <div className="container">
+      <div>
+        <p>This about page is for anyone to read!</p>
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default AboutPage;

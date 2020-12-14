@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
 
-const LoginForm = () => {
+function LoginForm() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -43,8 +43,7 @@ const LoginForm = () => {
             name="username"
             required
             value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
+            onChange={(event) => setUsername(event.target.value)} />
         </label>
       </div>
       <div>
@@ -55,8 +54,7 @@ const LoginForm = () => {
             name="password"
             required
             value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
+            onChange={(event) => setPassword(event.target.value)} />
         </label>
       </div>
       <div>

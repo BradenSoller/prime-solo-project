@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
 
-const RegisterForm = () => {
+function RegisterForm() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,25 +32,23 @@ const RegisterForm = () => {
       <div>
         <label htmlFor="username">
           Username:
-            <input
+          <input
             type="text"
             name="username"
             value={username}
             required
-            onChange={(event) => setUsername(event.target.value)}
-          />
+            onChange={(event) => setUsername(event.target.value)} />
         </label>
       </div>
       <div>
         <label htmlFor="password">
-          Password:
-            <input
+             Password:
+          <input
             type="password"
             name="password"
             value={password}
             required
-            onChange={(event) => setPassword(event.target.value)}
-          />
+            onChange={(event) => setPassword(event.target.value)} />
         </label>
       </div>
       <div>

@@ -2,9 +2,8 @@ import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import useReduxStore from '../../hooks/useReduxStore';
 
-const UserPage = () => {
+function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
-
   const store = useReduxStore();
   return (
     <div>

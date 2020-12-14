@@ -13,7 +13,7 @@ import useReduxStore from '../../hooks/useReduxStore';
 // by checking req.isAuthenticated for authentication
 // and by checking req.user for authorization
 
-const ProtectedRoute = (props) => {
+function ProtectedRoute(props) {
 
   const store = useReduxStore();
 
@@ -52,9 +52,8 @@ const ProtectedRoute = (props) => {
       // all props like 'exact' and 'path' that were passed in
       // are now passed along to the 'Route' Component
       {...otherProps}
-      component={ComponentToShow}
-    />
+      component={ComponentToShow} />
   );
-};
+}
 
 export default ProtectedRoute;

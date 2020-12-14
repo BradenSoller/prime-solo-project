@@ -5,7 +5,7 @@ import './LandingPage.css';
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-const LandingPage = () => {
+function LandingPage() {
   const [heading, setHeading] = useState('Welcome');
   const history = useHistory();
 
