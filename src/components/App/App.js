@@ -42,8 +42,9 @@ function App() {
             // shows AboutPage at all times (logged in or not)
             exact
             path="/about"
-            component={AboutPage}
-          />
+          >
+            <AboutPage />
+          </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -53,15 +54,17 @@ function App() {
             // logged in shows UserPage else shows LoginPage
             exact
             path="/user"
-            component={UserPage}
-          />
+          >
+            <UserPage />
+          </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
-            component={InfoPage}
-          />
+          >
+            <InfoPage />
+          </ProtectedRoute>
 
           {/* When a value is supplied for the authRedirect prop the user will
             be redirected to the path supplied when logged in, otherwise they will
@@ -72,30 +75,37 @@ function App() {
             // - else shows LoginPage at /login
             exact
             path="/login"
-            component={LoginPage}
             authRedirect="/user"
-          />
+          >
+            <LoginPage />
+          </ProtectedRoute>
+
           <ProtectedRoute
             // with authRedirect:
             // - if logged in, redirects to "/user"
             // - else shows RegisterPage at "/registration"
             exact
             path="/registration"
-            component={RegisterPage}
             authRedirect="/user"
-          />
+          >
+            <RegisterPage />
+          </ProtectedRoute>
+
           <ProtectedRoute
             // with authRedirect:
             // - if logged in, redirects to "/user"
             // - else shows LandingPage at "/home"
             exact
             path="/home"
-            component={LandingPage}
             authRedirect="/user"
-          />
+          >
+            <LandingPage />
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
-          <Route render={() => <h1>404</h1>} />
+          <Route>
+            <h1>404</h1>
+          </Route>
         </Switch>
         <Footer />
       </div>
