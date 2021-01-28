@@ -5,7 +5,6 @@ import './Nav.css';
 import useReduxStore from '../../hooks/useReduxStore';
 
 function Nav() {
-
   const store = useReduxStore();
 
   let loginLinkData = {
@@ -25,7 +24,6 @@ function Nav() {
       </Link>
       <div className="nav-right">
         <Link className="nav-link" to={loginLinkData.path}>
-
           {loginLinkData.text}
         </Link>
 

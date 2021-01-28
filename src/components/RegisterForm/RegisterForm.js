@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
 
 function RegisterForm() {
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const store = useReduxStore();
@@ -37,18 +36,20 @@ function RegisterForm() {
             name="username"
             value={username}
             required
-            onChange={(event) => setUsername(event.target.value)} />
+            onChange={(event) => setUsername(event.target.value)}
+          />
         </label>
       </div>
       <div>
         <label htmlFor="password">
-             Password:
+          Password:
           <input
             type="password"
             name="password"
             value={password}
             required
-            onChange={(event) => setPassword(event.target.value)} />
+            onChange={(event) => setPassword(event.target.value)}
+          />
         </label>
       </div>
       <div>
@@ -57,6 +58,5 @@ function RegisterForm() {
     </form>
   );
 }
-
 
 export default RegisterForm;

@@ -25,8 +25,8 @@ class TemplateClass extends Component {
 
 const mapStoreToProps = (reduxStore) => {
   return {
-    store: reduxStore
-  }
-}
+    store: reduxStore,
+  };
+};
 
 export default connect(mapStoreToProps)(TemplateClass);
