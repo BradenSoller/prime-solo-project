@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import useReduxStore from '../../hooks/useReduxStore';
+import {useSelector} from 'react-redux';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const store = useReduxStore();
+  const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
 
   const login = (event) => {
@@ -27,9 +27,9 @@ function LoginForm() {
   return (
     <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>
-      {store.errors.loginMessage && (
+      {errors.loginMessage && (
         <h3 className="alert" role="alert">
-          {store.errors.loginMessage}
+          {errors.loginMessage}
         </h3>
       )}
       <div>
