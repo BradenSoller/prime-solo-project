@@ -14,7 +14,6 @@ import useReduxStore from '../../hooks/useReduxStore';
 // and by checking req.user for authorization
 
 function ProtectedRoute(props) {
-
   const store = useReduxStore();
 
   // Using destructuring, this takes ComponentToProtect from component
@@ -57,6 +56,7 @@ function ProtectedRoute(props) {
     >
       <ComponentToShow />
     </Route>
+
   );
 }
 

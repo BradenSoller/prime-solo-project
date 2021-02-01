@@ -5,7 +5,6 @@ import './Nav.css';
 import useReduxStore from '../../hooks/useReduxStore';
 
 function Nav() {
-
   const store = useReduxStore();
 
   let loginLinkData = {
@@ -23,22 +22,21 @@ function Nav() {
       <Link to="/home">
         <h2 className="nav-title">Prime Solo Project</h2>
       </Link>
-      <div className="nav-right">
-        <Link className="nav-link" to={loginLinkData.path}>
-
+      <div>
+        <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
 
         {store.user.id && (
           <>
-            <Link className="nav-link" to="/info">
+            <Link className="navLink" to="/info">
               Info Page
             </Link>
-            <LogOutButton className="nav-link" />
+            <LogOutButton className="navLink" />
           </>
         )}
 
-        <Link className="nav-link" to="/about">
+        <Link className="navLink" to="/about">
           About
         </Link>
       </div>

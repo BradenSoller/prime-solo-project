@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 //Custom Hook -- uses other hooks
 const useReduxStore = () => {
   //accesses the useSelector hook and gives back entire store
-  return useSelector((store) => store)
-
+  return useSelector((store) => store);
 };
 
 /*
@@ -14,6 +13,5 @@ const useUser = () => {
   return useSelector(store => store.user)
 }
 */
-
 
 export default useReduxStore;
