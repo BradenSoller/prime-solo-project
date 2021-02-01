@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage';
-import useReduxStore from '../../hooks/useReduxStore';
+import {useSelector} from 'react-redux';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
 // Responsible for watching redux state, and returning an appropriate component
@@ -14,7 +14,7 @@ import useReduxStore from '../../hooks/useReduxStore';
 // and by checking req.user for authorization
 
 function ProtectedRoute(props) {
-  const store = useReduxStore();
+  const user = useSelector((store) => store.user);
 
   // Using destructuring, this takes ComponentToProtect from component
   // prop and grabs all other props to pass them along to Route
@@ -29,7 +29,7 @@ function ProtectedRoute(props) {
 
   let ComponentToShow;
 
-  if (store.user.id) {
+  if (user.id) {
     // if the user is logged in (only logged in users have ids)
     // show the component that is protected
     ComponentToShow = ComponentToProtect;
@@ -41,9 +41,9 @@ function ProtectedRoute(props) {
 
 
   // redirect a logged in user if an authRedirect prop has been provided
-  if (store.user.id && authRedirect != null) {
+  if (user.id && authRedirect != null) {
     return <Redirect exact from={otherProps.path} to={authRedirect} />;
-  } else if (!store.user.id && authRedirect != null) {
+  } else if (!user.id && authRedirect != null) {
     ComponentToShow = ComponentToProtect;
   }
 

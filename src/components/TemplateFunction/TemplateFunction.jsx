@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useReduxStore from '../../hooks/useReduxStore';
+import {useSelector} from 'react-redux';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
@@ -7,7 +7,7 @@ import useReduxStore from '../../hooks/useReduxStore';
 function TemplateFunction(props) {
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
-  const store = useReduxStore();
+  const store = useSelector((store) => store);
   const [heading, setHeading] = useState('Functional Component');
 
   return (
