@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.nav a {
+  text-decoration: none;
+}
+
 .nav-title {
   font-size: 24px;
   font-weight: 700;
