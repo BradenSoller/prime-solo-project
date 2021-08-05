@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import {
   HashRouter as Router,
-  Route,
   Redirect,
+  Route,
   Switch,
 } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
@@ -24,6 +24,8 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
+
+  const user = useSelector(store => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
@@ -66,41 +68,47 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
-          {/* When a value is supplied for the authRedirect prop the user will
-            be redirected to the path supplied when logged in, otherwise they will
-            be taken to the component and path supplied. */}
-          <ProtectedRoute
-            // with authRedirect:
-            // - if logged in, redirects to "/user"
-            // - else shows LoginPage at /login
+          <Route
             exact
             path="/login"
-            authRedirect="/user"
           >
-            <LoginPage />
-          </ProtectedRoute>
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect to the /user page
+              <Redirect to="/user" />
+              :
+              // Otherwise, show the login page
+              <LoginPage />
+            }
+          </Route>
 
-          <ProtectedRoute
-            // with authRedirect:
-            // - if logged in, redirects to "/user"
-            // - else shows RegisterPage at "/registration"
+          <Route
             exact
             path="/registration"
-            authRedirect="/user"
           >
-            <RegisterPage />
-          </ProtectedRoute>
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect them to the /user page
+              <Redirect to="/user" />
+              :
+              // Otherwise, show the registration page
+              <RegisterPage />
+            }
+          </Route>
 
-          <ProtectedRoute
-            // with authRedirect:
-            // - if logged in, redirects to "/user"
-            // - else shows LandingPage at "/home"
+          <Route
             exact
             path="/home"
-            authRedirect="/user"
           >
-            <LandingPage />
-          </ProtectedRoute>
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect them to the /user page
+              <Redirect to="/user" />
+              :
+              // Otherwise, show the Landing page
+              <LandingPage />
+            }
+          </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
