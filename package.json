@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
