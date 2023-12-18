@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   const query = `
-  INSERT INTO "appointments" ("first_name", "last_name", "email", "phone_number", "address", "zip", "description","budget" )
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+  INSERT INTO "appointments" ("first_name", "last_name", "email", "phone_number", "address", "zip", "description","budget", "user_id","service_id")
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8 ,$9, $10);
   `
   const values = [
     req.body.first_name,
@@ -25,8 +25,12 @@ router.post('/', (req, res) => {
     req.body.address,
     req.body.zip,
     req.body.description,
-    req.body.budget
+    req.body.budget,
+    req.user.id,
+    req.body.service_id
+
   ]
+
   console.log(req.body.description)
   pool
     .query(query, values)

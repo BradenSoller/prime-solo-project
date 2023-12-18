@@ -20,8 +20,9 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ScheduleForm from '../Schedule/Schedule Form';
-
+import AppointmentPage from '../ProtectedRoute/AppointmentPage/AppointmentPage';
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,12 @@ function App() {
           <Route exact path="/schedule">
             <ScheduleForm />
           </Route>
+          
+          <Route exact path="/appointments">
+            <AppointmentPage />
+          </Route>
+
+        
 
           
 

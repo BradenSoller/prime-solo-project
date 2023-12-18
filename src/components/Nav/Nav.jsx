@@ -31,18 +31,25 @@ function Nav() {
             <Link className="navLink" to="/schedule">
               Schedule
             </Link>
+            
+            <Link className="navLink" to="/appointments">
+              Appointments
+            </Link>
 
             <Link className="navLink" to="/services">
               Services
             </Link>
+            <Link className="navLink" to="/about">
+              About
+            </Link>
+
+         
 
             <LogOutButton className="navLink" />
           </>
         )}
 
-        <Link className="navLink" to="/about">
-          About
-        </Link>
+       
       </div>
     </div>
   );

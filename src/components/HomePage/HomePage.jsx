@@ -8,7 +8,7 @@ function HomePage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      <h2>YounBack Landscaping</h2>
+      <h2>Young Buck Landscaping</h2>
       <p>texttexttexttexttexttexttexttexttexttexttexttextttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
       
     </div>

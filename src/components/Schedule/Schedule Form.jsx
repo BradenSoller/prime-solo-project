@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-
+import './ScheduleForm.css';
 
 
 export default function ScheduleForm() {

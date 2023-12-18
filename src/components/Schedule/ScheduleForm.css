@@ -1,0 +1,40 @@
+input {
+   
+    width: 98%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+}
+button{
+margin-left: 8px;
+    margin-left: 400px;
+    
+    margin-right: 2px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 35px;
+    width: 90px;
+    text-align: center;
+background-color: orange;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+
+    position: relative;
+    text-decoration: none
+} 
+button:hover{
+    background-color: darkgoldenrod;
+}
+
+input:hover{
+    background-color: darkgray;
+}
+
+body {
+    background-color: lightgray;
+}
