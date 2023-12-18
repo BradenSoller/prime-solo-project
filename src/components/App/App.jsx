@@ -14,11 +14,12 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import HomePage from '../HomePage/HomePage';
+import ServicePage from '../ServicePage/ServicePage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import ScheduleForm from '../Schedule/Schedule Form';
 
 import './App.css';
 
@@ -48,6 +49,12 @@ function App() {
             <AboutPage />
           </Route>
 
+          <Route exact path="/schedule">
+            <ScheduleForm />
+          </Route>
+
+          
+
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
@@ -57,15 +64,15 @@ function App() {
             exact
             path="/user"
           >
-            <UserPage />
+            <HomePage />
           </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
+            path="/services"
           >
-            <InfoPage />
+            <ServicePage/>
           </ProtectedRoute>
 
           <Route
