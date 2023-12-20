@@ -1,4 +1,4 @@
-input {
+input, select{
    
     width: 98%;
         padding: 12px 20px;
@@ -10,7 +10,7 @@ input {
 }
 button{
 margin-left: 8px;
-    margin-left: 400px;
+  
     
     margin-right: 2px;
     font-size: 20px;
@@ -23,9 +23,11 @@ background-color: orange;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-
+ 
+   
     position: relative;
-    text-decoration: none
+    text-decoration: none;
+
 } 
 button:hover{
     background-color: darkgoldenrod;

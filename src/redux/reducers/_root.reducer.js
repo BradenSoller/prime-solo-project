@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
-import newAppointment from './appointment.reducer';
+import newAppointment from './appointment.reducer'; 
+import services from './services.reducer';
+
+
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -12,7 +15,11 @@ import newAppointment from './appointment.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user,
-  newAppointment// will have an id and username if someone is logged in
+  newAppointment,
+  services
+
+  
+  // will have an id and username if someone is logged in
 });
 
 export default rootReducer;

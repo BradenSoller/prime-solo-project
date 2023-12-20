@@ -7,4 +7,5 @@ const newAppointment = (state = [], action) => {
     }
 }
 
+
 export default newAppointment

@@ -1,9 +1,18 @@
-import { useState } from "react"
+import { useState, useEffect} from "react"
 import { useDispatch, useSelector } from "react-redux"
 import './ScheduleForm.css';
 
 
+
 export default function ScheduleForm() {
+    const services = useSelector(store => store.services)
+ 
+
+ 
+    
+    useEffect(() => {
+     getServices()
+    }, []);
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -13,8 +22,14 @@ export default function ScheduleForm() {
     const [zip, setZip] = useState('');
     const [description, setDescription] = useState('');
     const [budget, setBudget] = useState('');
+    const [service, setService] = useState('');
 
     const dispatch = useDispatch();
+
+    
+    const getServices = () => {
+        dispatch({ type: "SAGA/GET_SERVICES" });
+    };
 
     const newAppointment = (event) => {
         event.preventDefault();
@@ -38,9 +53,11 @@ export default function ScheduleForm() {
         setZip('')
         setDescription('')
         setBudget('')
+        setService('')
 
     };
     return (
+        <div>
         <form onSubmit={newAppointment}>
             <input
                 type="text"
@@ -77,7 +94,18 @@ export default function ScheduleForm() {
                 value={zip}
                 placeholder="Zip"
                 onChange={(event) => setZip(event.target.value)}
-            />
+                />
+                <select value={service} onChange={(e) => setService(e.target.value)}>
+        
+                    {services.map((service) => {
+                        return (
+                            <option key={service.id} value={service.id}>
+                                {service.name}
+                            </option>
+                        );
+                    })}
+                </select>
+                
             <input
                 type="text"
                 value={description}
@@ -92,7 +120,8 @@ export default function ScheduleForm() {
             />
             <button>submit</button>
            
-        </form>
+            </form>
+        </div>
     )
 
     
