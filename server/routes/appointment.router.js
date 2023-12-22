@@ -5,10 +5,27 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
-  // const qeury 
-  // GET route code here
+router.get('/:id', (req, res) => {
+  const query = `SELECT "appointments"."user_id", "appointments"."time_completed", "appointments"."first_name", "appointments"."last_name", 
+  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."user_id", "appointments"."service_id"
+  FROM "appointments"
+  INNER JOIN "user"
+  ON "appointments"."user_id" = "user"."id"
+  WHERE "user"."id" = ${req.params.id};
+  `; pool
+  .query(query)
+  .then(result => {
+    console.log("results.rows", result);
+    res.send(result.rows);
+  })
+  .catch((err) => {
+    console.log("ERROR: Get all genres", err);
+    res.sendStatus(500);
+  });
+
 });
+
+
 
 /**
  * POST route template
@@ -32,7 +49,7 @@ router.post('/', (req, res) => {
 
   ]
 
-  console.log(req.body.description)
+  console.log("dssdcsdc")
   pool
     .query(query, values)
     .then(result => {

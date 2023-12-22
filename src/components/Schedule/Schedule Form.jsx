@@ -96,7 +96,7 @@ export default function ScheduleForm() {
                 onChange={(event) => setZip(event.target.value)}
                 />
                 <select value={service} onChange={(e) => setService(e.target.value)}>
-        
+                    <option value={0}>select</option>
                     {services.map((service) => {
                         return (
                             <option key={service.id} value={service.id}>

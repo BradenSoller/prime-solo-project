@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+    text-align: left;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+    height: 2.15em;
+
+}
+
+th,
+td {
+    padding: .5em;
+    min-width: 3.5em;
+}
+
+thead {
+    background: #7A7A7A;
+    color: #FCFCFC;
+}

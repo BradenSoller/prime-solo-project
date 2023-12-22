@@ -9,8 +9,9 @@ function Nav() {
 
   return (
     <div className="nav">
+      <img height={93} src="/yb-logo.jpg"/>
       <Link to="/home">
-        <h2 className="nav-title">Young Buck Landscaping</h2>
+        <h2 className="nav-title"></h2>
       </Link>
       <div>
         {/* If no user is logged in, show these links */}

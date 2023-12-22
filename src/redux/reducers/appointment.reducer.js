@@ -1,6 +1,6 @@
-const newAppointment = (state = [], action) => {
+const newAppointment = (state = [{}], action) => {
     switch (action.type) {
-        case 'SET_APPOINTMENT':
+        case 'GET_APPOINTMENT':
             return action.payload
         default:
             return state;

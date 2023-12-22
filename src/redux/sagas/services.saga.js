@@ -6,7 +6,7 @@ function* getServices() {
     try {
         const response = yield axios.get("/api/services");
         yield put({ type: "GET_SERVICES", payload: response.data });
-        console.log("response.data", response.data);
+      
     } catch (error) {
         console.log("Error with categories request:", error);
     }

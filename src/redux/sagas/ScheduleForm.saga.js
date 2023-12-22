@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
+import getAppointmentSaga from './appointments.saga';
 
     function* postAppointment(action) {
         try {
@@ -8,7 +9,7 @@ import { put, takeLatest } from 'redux-saga/effects';
                 url: '/api/appointment',
                 data: action.payload
             })
-            // yield fetchAppointment()
+            yield getAppointmentSaga()
         }
         catch (error) {
             console.error('Shelf POST failed:', error)
@@ -16,9 +17,9 @@ import { put, takeLatest } from 'redux-saga/effects';
     }
 
 
-function* AppointmentSaga() {
+function* postAppointmentSaga() {
     yield takeLatest('SAGA/POST_APPOINTMENT', postAppointment)
 }
 
 
-export default AppointmentSaga
+export default postAppointmentSaga
