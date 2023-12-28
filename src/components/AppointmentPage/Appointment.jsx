@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import './Appointments.css'
+import ScheduleForm from "../Schedule/Schedule Form"
 
-export default function AppointmentPage() {
+export default function AppointmentPage({ appointment }) {
 
 
     const dispatch = useDispatch()
 
     const Appointments = useSelector(store => store.newAppointment)
-
+console.log('appointments',Appointments);
     const user = useSelector(store => store.user)
     console.log("user:", user);
 
     useEffect(() => {
         getAppointment()
+     
 
     }, []);
 
@@ -24,6 +26,13 @@ export default function AppointmentPage() {
 
 
         })
+    }
+    const deleteAppointment = (appointment) => {
+        dispatch({
+            type: 'SAGA/DELETE_APPOINTMENTS',
+            payload: appointment
+        })
+      
     }
 
     return (
@@ -36,6 +45,7 @@ export default function AppointmentPage() {
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
+                        <th>Edit/Remove</th>
 
                     </tr>
                 </thead>
@@ -48,13 +58,15 @@ export default function AppointmentPage() {
                                 <td>{appointment.last_name}</td>
                                 <td>{appointment.email}</td>
                                 <td>{appointment.phone_number}</td>
-                           
-                               
+                                <td><button>edit</button><button onClick={() => deleteAppointment(appointment)}>remove</button></td>
                             </tr>
+                            
                         )
+                        
                     })}
                 </tbody>
             </table>
+
         </div>
     )
 

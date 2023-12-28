@@ -1,17 +1,19 @@
 import { useState, useEffect} from "react"
 import { useDispatch, useSelector } from "react-redux"
 import './ScheduleForm.css';
+import getAppointmentSaga from "../../redux/sagas/getAppointments.saga";
 
 
 
-export default function ScheduleForm() {
+export default function ScheduleForm({ appointment }) {
     const services = useSelector(store => store.services)
- 
+    const Appointments = useSelector(store => store.newAppointment)
 
  
     
     useEffect(() => {
-     getServices()
+        getServices()
+    
     }, []);
 
     const [firstName, setFirstName] = useState('');
@@ -26,6 +28,7 @@ export default function ScheduleForm() {
 
     const dispatch = useDispatch();
 
+  
     
     const getServices = () => {
         dispatch({ type: "SAGA/GET_SERVICES" });
@@ -58,6 +61,7 @@ export default function ScheduleForm() {
     };
     return (
         <div>
+            
         <form onSubmit={newAppointment}>
             <input
                 type="text"

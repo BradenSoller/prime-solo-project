@@ -1,0 +1,24 @@
+.imageSlider{
+    float: right;
+    position: absolute; right: 10px;
+        top: 115px;
+        border: 5px solid;
+}
+
+.container{
+
+}
+
+.ScheduleService{
+    float: right;
+    float: right;
+        position: absolute;
+        right: 115px;
+        top: 430px;
+        white-space: nowrap;
+            text-align: center;
+       width: 200px;
+       height: 33px;
+       
+   
+}
