@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
-import getAppointmentSaga from './appointments.saga';
+import getAppointmentSaga from './getAppointments.saga';
 
     function* postAppointment(action) {
         try {
