@@ -1,7 +1,7 @@
-.imageSlider{
+.MulchSlider{
     float: right;
     position: absolute; right: 10px;
-        top: 115px;
+        top: 165px;
         border: 5px solid;
 }
 
@@ -14,11 +14,100 @@
     float: right;
         position: absolute;
         right: 115px;
-        top: 430px;
+        top: 480px;
         white-space: nowrap;
             text-align: center;
        width: 200px;
        height: 33px;
        
    
+}
+
+.DeckButton {
+    float: right;
+    float: right;
+    position: absolute;
+    right: 110px;
+    top: 914px;
+    white-space: nowrap;
+    text-align: center;
+    width: 200px;
+    height: 33px;
+
+
+}
+
+.DeckSlider {
+    float: right;
+    position: absolute;
+    right: 10px;
+    top: 600px;
+    border: 5px solid;
+}
+.MulchText{
+  
+        position: absolute;
+        left: 10px;
+        top: 150px;
+       
+}
+
+
+.DeckText{
+    position: absolute;
+        left: 10px;
+        top: 575px;
+
+}
+
+.RockSlider {
+        float: right;
+            position: absolute;
+            right: 10px;
+            bottom: -625px;
+            border: 5px solid;
+}
+
+.RockText{
+    position: absolute;
+        left: 10px;
+        bottom: -610px;
+}
+
+.RockButton{
+    float: right;
+        float: right;
+        position: absolute;
+        right: 110px;
+        bottom: -662px;
+        white-space: nowrap;
+        text-align: center;
+        width: 200px;
+        height: 33px;
+}
+
+.BrushSlider{
+    float: right;
+        position: absolute;
+        right: 10px;
+        bottom: -1060px;
+        border: 5px solid;
+
+}
+.BrushText {
+    position: absolute;
+    left: 10px;
+    bottom: -1050px;
+}
+
+.BrushButton{
+    float: right;
+        float: right;
+        position: absolute;
+        right: 110px;
+        bottom: -1097px;
+        white-space: nowrap;
+        text-align: center;
+        width: 200px;
+        height: 33px;
 }

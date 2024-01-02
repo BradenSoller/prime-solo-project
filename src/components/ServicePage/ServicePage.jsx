@@ -10,16 +10,32 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 function ServicePage() {
 const history = useHistory()
 
-  const sliderImages = [
+  const MulchImages = [
     { url: "before-multch.jpg" },
     { url: "AFTER-ADD-MULTCH.jpg" }
+  ]
+
+  const DeckImages = [
+    {url: 'deck-before-trailer-jpg.jpg'},
+    {url: 'deck-after-trailer.jpg' }
+  ]
+
+  const RockImages = [
+    {url: 'side-rock-before.jpg' },
+    {url: 'side-rock-after.jpg' }
+  ]
+
+  const BrushImages = [
+    { url: 'brush-cleanup-before.jpg' },
+    { url: 'brush-cleanup-after.jpg' }
+
   ]
   const goToAppointments = () => {
    history.push(`./schedule`)
  }
   return (
-
-    <div className="container">
+<div>
+    <div className="MulchText">
       <h3>
         Mulching
       </h3>
@@ -27,18 +43,73 @@ const history = useHistory()
         text tet
         text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet
       </p>
+      </div>
+      <div className='DeckText'>
+        <h3>Deck Staining</h3>
+       <p> text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet</p>
 
-      <div className='imageSlider'>
+      </div>
+      <div className='RockText'>
+        <h3>Rock Removal</h3>
+        <p> text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet</p>
+
+      </div>
+      <div className='BrushText'>
+        <h3>Brush/Junk Removal</h3>
+        <p> text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet text tet</p>
+
+      </div>
+      <div className='MulchSlider'>
       <SimpleImageSlider
         width={400}
         height={300}
-        images={sliderImages}
+        images={MulchImages}
         showBullets={true}
         showNavs={true}
         />
       </div>
       <button className='ScheduleService' onClick={goToAppointments}>schedule now</button>
-    </div>
+      <div className='DeckSlider'> 
+        <SimpleImageSlider
+          width={400}
+          height={300}
+          images={DeckImages}
+          showBullets={true}
+          showNavs={true}
+        />
+        
+      </div>
+      <button className='DeckButton' onClick={goToAppointments}>schedule now</button>
+
+      <div className='RockSlider'>
+        <SimpleImageSlider
+          width={400}
+          height={300}
+          images={RockImages}
+          showBullets={true}
+          showNavs={true}
+        />
+
+      </div>
+      <button className='RockButton' onClick={goToAppointments}>schedule now</button>
+
+
+      <div className='BrushSlider'>
+        <SimpleImageSlider
+          width={400}
+          height={300}
+          images={BrushImages}
+          showBullets={true}
+          showNavs={true}
+        />
+
+      </div>
+      <button className='BrushButton' onClick={goToAppointments}>schedule now</button>
+
+      </div>
+   
+
+      
   );
 }
 
