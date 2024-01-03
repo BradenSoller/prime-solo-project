@@ -5,25 +5,60 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/:id', (req, res) => {
-  const query = `SELECT "appointments"."id", "appointments"."user_id", "appointments"."time_completed", "appointments"."first_name", "appointments"."last_name", 
+router.get('/', (req, res) => {
+  let query = ''
+  if (req.user.isAdmin) {
+    query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
   "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."user_id", "appointments"."service_id"
   FROM "appointments"
+  INNER JOIN "services"
+   ON  "appointments"."service_id" = "services"."id"
+  INNER JOIN "user"
+  ON "appointments"."user_id" = "user"."id"`
+  }
+  else {
+    query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
+  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."user_id", "appointments"."service_id"
+  FROM "appointments"
+  INNER JOIN "services"
+   ON  "appointments"."service_id" = "services"."id"
   INNER JOIN "user"
   ON "appointments"."user_id" = "user"."id"
-  WHERE "user"."id" = ${req.params.id};
-  `; pool
+  WHERE "user"."id" = ${[req.user.id]}
+  
+  `
+  };
+  pool
   .query(query)
   .then(result => {
-    console.log("results.rows", result);
+    console.log("results.rows", result.rows);
     res.send(result.rows);
+    console.log();
   })
   .catch((err) => {
-    console.log("ERROR: Get all genres", err);
+    console.log("ERROR: Get all appointments", err);
     res.sendStatus(500);
   });
 
 });
+
+router.get('/:id', (req, res) => {
+  const sqlText = `
+    SELECT * FROM "appointments"
+      WHERE "id"=$1;
+  `
+  const sqlValues = [req.params.id]
+
+  pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      const appointmentDetails = dbRes.rows[0]
+      res.send(appointmentDetails)
+    })
+    .catch((dbErr) => {
+      console.log('GET /appointments/:id fail:', dbErr)
+      res.sendStatus(500)
+    })
+})
 
 
 
