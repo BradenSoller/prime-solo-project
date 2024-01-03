@@ -1,17 +1,17 @@
 import { useState, useEffect} from "react"
 import { useDispatch, useSelector } from "react-redux"
 import './ScheduleForm.css';
-import getAppointmentSaga from "../../redux/sagas/getAppointments.saga";
+
 
 
 
 export default function ScheduleForm({ appointment }) {
-    const services = useSelector(store => store.services)
-    const Appointments = useSelector(store => store.newAppointment)
-
+    
+   
+   
  
     
-    useEffect(() => {
+    useEffect(() => {         
         getServices()
     
     }, []);
@@ -25,6 +25,7 @@ export default function ScheduleForm({ appointment }) {
     const [description, setDescription] = useState('');
     const [budget, setBudget] = useState('');
     const [service, setService] = useState('');
+    console.log('service', service);
 
     const dispatch = useDispatch();
 
@@ -45,7 +46,8 @@ export default function ScheduleForm({ appointment }) {
                 address: address,
                 zip: zip,
                 description: description,
-                budget: budget
+                budget: budget,
+                service_id: service
             }
         });
         setFirstName('')
@@ -59,6 +61,9 @@ export default function ScheduleForm({ appointment }) {
         setService('')
 
     };
+
+
+    
     return (
         <div>
             
@@ -101,13 +106,17 @@ export default function ScheduleForm({ appointment }) {
                 />
                 <select value={service} onChange={(e) => setService(e.target.value)}>
                     <option value={0}>select</option>
-                    {services.map((service) => {
-                        return (
-                            <option key={service.id} value={service.id}>
-                                {service.name}
-                            </option>
-                        );
-                    })}
+                    <option value={1}>Rock Removal</option>
+                    <option value={2}>Deck Staining</option>
+                    <option value={3}>Weeding</option>
+                    <option value={4}>Tree Triming </option>
+                    <option value={5}>Bursh/Junk Removal</option>
+                    <option value={6}>Deck Staining</option>
+
+
+
+
+
                 </select>
                 
             <input

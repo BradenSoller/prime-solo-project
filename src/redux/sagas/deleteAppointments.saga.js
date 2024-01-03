@@ -1,16 +1,17 @@
 import axios from "axios";
-import { put, takeLatest, call } from "redux-saga/effects";
-import getAppointmentSaga from "./getAppointments.saga";
+import { put, takeLatest } from "redux-saga/effects";
+
 
 function* deleteAppointment(action) {
+    console.log(action.payload.id);
   try {
-    const response = yield axios({
+      const response = yield axios({
       method: "DELETE",
       url: `/api/appointment/${action.payload.id}`,
     });
     yield put({
-      type: "SAGA/GET_APPOINTMENTS",
-      payload: action.payload.id,
+      type: "SAGA/GET_APPOINTMENTS"
+     
     });
   } catch (error) {
     console.error("Shelf DELETE failed:", error);

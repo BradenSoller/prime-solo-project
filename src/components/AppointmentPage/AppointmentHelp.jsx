@@ -8,13 +8,25 @@ export default function appointmentHelp() {
     const Appointments = useSelector(store => store.newAppointment)
     return (
         <div>
-            {
-                Appointments.map((appointment) => (
-                    <AppointmentPage key={appointment.id} appointment={appointment} />
-                ))
+            {Appointments.map((appointment) => { 
+                <div>
+                <AppointmentPage key={appointment.id} appointment={appointment}/>
+               <ScheduleForm key={appointment.id} appointment={appointment} />
+                    </div>
+    })}
 
-
-            }
         </div>
+
     )
+
+
+
+
+
 }
+
+
+
+
+
+
