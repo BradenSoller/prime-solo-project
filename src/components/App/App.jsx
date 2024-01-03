@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ScheduleForm from '../Schedule/Schedule Form';
 import AppointmentPage from '../AppointmentPage/Appointment';
+import EditAppointmentPage from '../EditStudentPage/editStudent';
 import './App.css';
 
 
@@ -57,6 +58,12 @@ function App() {
           <Route exact path="/appointments">
             <AppointmentPage />
           </Route>
+
+          <Route exact path="/edit_appointment/:id">
+            <EditAppointmentPage/>
+          </Route>
+
+          
 
         
 

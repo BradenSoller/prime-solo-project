@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import newAppointment from './appointment.reducer'; 
 import services from './services.reducer';
+import editAppointment from './editApointment.reducer';
 
 
 
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user,
   newAppointment,
-  services
+  services,
+  editAppointment
 
   
   // will have an id and username if someone is logged in

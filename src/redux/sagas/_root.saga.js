@@ -6,6 +6,7 @@ import postAppointmentSaga from './ScheduleForm.saga';
 import servicesSaga from './services.saga';
 import getAppointmentSaga from './getAppointments.saga';
 import deleteAppointmentSaga from './deleteAppointments.saga';
+import editAppointmemtSaga from './editAppointment.saga';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -21,7 +22,8 @@ export default function* rootSaga() {
     postAppointmentSaga(),
     servicesSaga(),
     getAppointmentSaga(),
-    deleteAppointmentSaga()
+    deleteAppointmentSaga(),
+    editAppointmemtSaga()
 
     
 
