@@ -4,13 +4,16 @@ import { useDispatch, useSelector } from "react-redux"
 import './Appointments.css'
 import ScheduleForm from "../Schedule/Schedule Form"
 
-export default function appointmentHelp() {
+export default function AppointmentHelp() {
     const Appointments = useSelector(store => store.newAppointment)
+    console.log("appointments", Appointments);
     return (
         <div>
             {Appointments.map((appointment) => { 
+                console.log("appointment",appointment);
                 <div>
-                <AppointmentPage key={appointment.id} appointment={appointment}/>
+                    <AppointmentPage key={appointment.id} appointment={appointment} />
+                    
                <ScheduleForm key={appointment.id} appointment={appointment} />
                     </div>
     })}

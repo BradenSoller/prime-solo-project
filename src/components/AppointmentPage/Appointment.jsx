@@ -13,7 +13,7 @@ const history = useHistory()
     
     useEffect(() => {
      dispatch({ type: 'SAGA/GET_APPOINTMENTS' }) 
-      
+     
     }, [])
 
     const user = useSelector(store => store.user)
@@ -29,7 +29,9 @@ const history = useHistory()
         
     }
 
-    
+    const handleStatus = () => {
+
+    }
     
       
     
@@ -50,20 +52,19 @@ const history = useHistory()
                         <th>Service</th>
                         <th>Description</th>
                         <th>Budget</th>
-                    
-
                         <th>Edit / Remove</th>
+                        <th>Status</th>
 
                     </tr>
                 </thead>
                 <tbody>
-                   
+                    
                     {Appointments.map((appointment) => {
                         return (
                             <tr key={appointment.id}>
                                 <td>{JSON.stringify(appointment.time_completed.slice(0,-14))}</td>
                                 <td>{appointment.first_name}</td>
-                                <td>{appointment.last_name}</td>
+                            <td>{appointment.last_name}</td>
                                 <td>{appointment.email}</td>
                                 <td>{appointment.phone_number}</td>
                                 <td>{appointment.address}</td>
@@ -71,13 +72,15 @@ const history = useHistory()
                                 <td>{appointment.name }</td>
                                 <td>{appointment.description}</td>
                                 <td>{appointment.budget}</td>
+                                {!user.isAdmin && <td>{appointment.status ? 'confirmed' : 'confirmed '}</td>  }
+                                {user.isAdmin && <button>{appointment.status  ? 'confirmded' : 'waiting'}</button>}
 
-                                <td><button onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}>edit</button><button onClick={(e) => deleteAppointment(appointment)}>remove</button></td>
+                                <td>{user.isAdmin === false && <button onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}>edit</button>}
+                                    <button onClick={(e) => deleteAppointment(appointment)}>remove</button></td>
                             </tr>
                             
                         )
-                        
-                    })}
+                    })} 
                   
 
                 </tbody>

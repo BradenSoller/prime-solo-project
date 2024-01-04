@@ -5,7 +5,8 @@ function* getAppointments() {
   try {
       const response = yield axios.get(`/api/appointment`);
       console.log("response", response);
-    yield put({ type: "GET_APPOINTMENT", payload: response.data});
+      yield put({ type: "GET_APPOINTMENT", payload: response.data });
+
   } catch (error) {
     console.log("Error with categories request:", error);
   }

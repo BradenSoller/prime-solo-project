@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   let query = ''
   if (req.user.isAdmin) {
     query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
-  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."user_id", "appointments"."service_id"
+  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status", "appointments"."user_id", "appointments"."service_id"
   FROM "appointments"
   INNER JOIN "services"
    ON  "appointments"."service_id" = "services"."id"
@@ -44,8 +44,12 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const sqlText = `
-    SELECT * FROM "appointments"
-      WHERE "id"=$1;
+  SELECT "appointments"."id", "appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
+  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."user_id", "appointments"."service_id"
+  FROM "appointments"
+  INNER JOIN "services"
+   ON  "appointments"."service_id" = "services"."id"
+        WHERE "appointments"."id" = $1;
   `
   const sqlValues = [req.params.id]
 
@@ -60,6 +64,34 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+  console.log('serviceID:',req.body.service_id);
+  // Update this single student
+  const idToUpdate = req.params.id;
+  const sqlText = `
+  UPDATE "appointments"
+  SET "first_name" = $1,
+  "last_name" = $2,
+  "email" = $3,
+  "phone_number" = $4,
+  "address" = $5,
+  "zip" = $6,
+  "description" = $7,
+  "budget" = $8,
+  "service_id" = $9
+  WHERE "id"= $10;
+  `;
+
+  
+  pool.query(sqlText, [req.body.first_name, req.body.last_name, req.body.email, req.body.phone_number, req.body.address, req.body.zip, req.body.description, req.body.budget, req.body.service_id, idToUpdate] )
+      .then((result) => {
+          res.sendStatus(200);
+      })
+      .catch((error) => {
+          console.log(`Error making database query ${sqlText}`, error);
+          res.sendStatus(500);
+      });
+});
 
 
 /**
