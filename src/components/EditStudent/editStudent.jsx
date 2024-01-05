@@ -1,6 +1,7 @@
 import { useParams, useHistory } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Button } from '@mui/material'
 
 export default function EditAppointmentPage() {
     // Yell 'FETCH_STUDENT_DETAILS' and send a student id
@@ -74,6 +75,12 @@ console.log("editAppointment", editAppointment);
             payload: budget
         })
     }
+    // const handleStatus = (status) => {
+    //     dispatch({
+    //         type: 'CHANGE_STATUS',
+    //         payload: status
+    //     })
+    // }
    
 
     const applyEdits = (e) => {
@@ -143,8 +150,9 @@ console.log("editAppointment", editAppointment);
                     value={editAppointment.budget || ''}
                     onChange={(e) => handleBudget(e.target.value)}
                 />
+                
             
-                <button onClick={applyEdits}>Submit</button>
+                <Button variant='contained' color='warning' type='onSubmit' onClick={applyEdits}>Submit</Button>
             </form>
         </div>
     )
