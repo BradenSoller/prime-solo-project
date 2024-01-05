@@ -3,6 +3,19 @@ import { useDispatch, useSelector, } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import './Appointments.css'
 import ScheduleForm from "../Schedule/Schedule Form"
+import Button from '@mui/material/Button';
+import { IconButton } from "@mui/material"
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
 
 export default function AppointmentPage({appointment}) {
 
@@ -29,63 +42,89 @@ const history = useHistory()
         
     }
 
-    const handleStatus = () => {
+    const handleStatus = (appointment) => {
+
+        dispatch({
+            type: 'SAGA/CHANGE_STATUS',
+            payload: appointment.id
+        })
 
     }
-    
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+            backgroundColor: theme.palette.common.black,
+            color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+            fontSize: 14,
+        },
+    }));
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+          
+        },
+    }));
+
       
     
 
     
     return (
         <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Time Completed</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                        <th>Address</th>
-                        <th>Zip</th>
-                        <th>Service</th>
-                        <th>Description</th>
-                        <th>Budget</th>
-                        <th>Edit / Remove</th>
-                        <th>Status</th>
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                <TableHead>
+                        <TableRow>
+                        <StyledTableCell>Time Completed</StyledTableCell>
+                            <StyledTableCell>First Name</StyledTableCell>
+                            <StyledTableCell>Last Name</StyledTableCell>
+                            <StyledTableCell>Email</StyledTableCell>
+                            <StyledTableCell>Phone Number</StyledTableCell>
+                            <StyledTableCell>Address</StyledTableCell>
+                        <StyledTableCell>Zip</StyledTableCell>
+                        <StyledTableCell>Service</StyledTableCell>
+                        <StyledTableCell>Description</StyledTableCell>
+                        <StyledTableCell>Budget</StyledTableCell>
+                        <StyledTableCell>Status</StyledTableCell>
+                        <StyledTableCell> Edit / Remove</StyledTableCell>
 
-                    </tr>
-                </thead>
-                <tbody>
+                </TableRow>
+                </TableHead>
+                <TableBody>
                     
                     {Appointments.map((appointment) => {
                         return (
-                            <tr key={appointment.id}>
-                                <td>{JSON.stringify(appointment.time_completed.slice(0,-14))}</td>
-                                <td>{appointment.first_name}</td>
-                            <td>{appointment.last_name}</td>
-                                <td>{appointment.email}</td>
-                                <td>{appointment.phone_number}</td>
-                                <td>{appointment.address}</td>
-                                <td>{appointment.zip}</td>
-                                <td>{appointment.name }</td>
-                                <td>{appointment.description}</td>
-                                <td>{appointment.budget}</td>
-                                {!user.isAdmin && <td>{appointment.status ? 'confirmed' : 'confirmed '}</td>  }
-                                {user.isAdmin && <button>{appointment.status  ? 'confirmded' : 'waiting'}</button>}
+                            <StyledTableRow key={appointment.id}>
+                                <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0,-14))}</StyledTableCell>
+                                <StyledTableCell>{appointment.first_name}</StyledTableCell>
+                            <StyledTableCell>{appointment.last_name}</StyledTableCell>
+                                <StyledTableCell>{appointment.email}</StyledTableCell>
+                                <StyledTableCell>{appointment.phone_number}</StyledTableCell>
+                                <StyledTableCell>{appointment.address}</StyledTableCell>
+                                <StyledTableCell>{appointment.zip}</StyledTableCell>
+                                <StyledTableCell>{appointment.name }</StyledTableCell>
+                                <StyledTableCell>{appointment.description}</StyledTableCell>
+                                <StyledTableCell>{appointment.budget}</StyledTableCell>
+                                {!user.isAdmin && <StyledTableCell>{appointment.status ? 'confirmed' : 'pending'}</StyledTableCell>}
 
-                                <td>{user.isAdmin === false && <button onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}>edit</button>}
-                                    <button onClick={(e) => deleteAppointment(appointment)}>remove</button></td>
-                            </tr>
+                                <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon/></IconButton>}
+                                    <IconButton aria-label="delete" onClick={(e) => deleteAppointment(appointment)}>
+                                      <DeleteForeverIcon/>
+                                    </IconButton></StyledTableCell>
+                                {user.isAdmin && <StyledTableCell><button onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </button></StyledTableCell>}
+                            </StyledTableRow>
                             
                         )
                     })} 
                   
 
-                </tbody>
-            </table>
-
+                </TableBody>
+            </Table>
+            </TableContainer>
         </div>
     )
 

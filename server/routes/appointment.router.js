@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   let query = ''
   if (req.user.isAdmin) {
     query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
-  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status", "appointments"."user_id", "appointments"."service_id"
+  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status",  "appointments"."user_id", "appointments"."service_id"
   FROM "appointments"
   INNER JOIN "services"
    ON  "appointments"."service_id" = "services"."id"
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   }
   else {
     query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
-  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."user_id", "appointments"."service_id"
+  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status", "appointments"."user_id", "appointments"."service_id"
   FROM "appointments"
   INNER JOIN "services"
    ON  "appointments"."service_id" = "services"."id"
@@ -45,7 +45,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const sqlText = `
   SELECT "appointments"."id", "appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
-  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."user_id", "appointments"."service_id"
+  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status", "appointments"."user_id", "appointments"."service_id"
   FROM "appointments"
   INNER JOIN "services"
    ON  "appointments"."service_id" = "services"."id"
@@ -68,7 +68,8 @@ router.put('/:id', (req, res) => {
   console.log('serviceID:',req.body.service_id);
   // Update this single student
   const idToUpdate = req.params.id;
-  const sqlText = `
+
+    let sqlText = `
   UPDATE "appointments"
   SET "first_name" = $1,
   "last_name" = $2,
@@ -78,12 +79,13 @@ router.put('/:id', (req, res) => {
   "zip" = $6,
   "description" = $7,
   "budget" = $8,
-  "service_id" = $9
-  WHERE "id"= $10;
+  "status" = $9,
+  "service_id" = $10
+  WHERE "id"= $11;
   `;
-
   
-  pool.query(sqlText, [req.body.first_name, req.body.last_name, req.body.email, req.body.phone_number, req.body.address, req.body.zip, req.body.description, req.body.budget, req.body.service_id, idToUpdate] )
+  
+  pool.query(sqlText, [req.body.first_name, req.body.last_name, req.body.email, req.body.phone_number, req.body.address, req.body.zip, req.body.description, req.body.budget, req.body.status, req.body.service_id, idToUpdate] )
       .then((result) => {
           res.sendStatus(200);
       })
@@ -93,7 +95,27 @@ router.put('/:id', (req, res) => {
       });
 });
 
+router.put('/status/:id', (req, res) => {
+  
+ 
+  
+  const sqlText = `
+  UPDATE "appointments"
+   SET "status" = NOT "status"
+   WHERE "id" = ${req.params.id};
+    `
+  
+ 
 
+  pool.query(sqlText)
+  .then((dbResult) =>{
+      res.sendStatus(200);
+  })
+  .catch((dbError)=>{
+      console.log('PUT /koalas:id failed', dbError)
+      res.sendStatus(500);
+  })
+});
 /**
  * POST route template
  */
