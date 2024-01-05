@@ -44,6 +44,12 @@ const editAppointment = (state = {}, action) => {
           return { ...state, budget: budget }
   
       }
+   
+    else if (action.type === 'CHANGE_STATUS') {
+        const status = action.payload
+          return { ...state, status: status }
+  
+      }
     return state;
  }
 

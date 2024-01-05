@@ -21,6 +21,7 @@ function* fetchAppointmentDetails(action) {
     }
 }
 function* submitAppointmentEdit(action) {
+   
     try {
       console.log(action.payload)
       const editedAppointment = action.payload
@@ -38,10 +39,13 @@ function* submitAppointmentEdit(action) {
             name: editedAppointment.name,
             description: editedAppointment.description,
             budget: editedAppointment.budget,
-            service_id: editedAppointment.service_id
+            status: editedAppointment.status,
+            service_id: editedAppointment.service_id,
             
+         
         }
       })
+        
    
   
       yield put({
@@ -50,8 +54,36 @@ function* submitAppointmentEdit(action) {
     } catch (err) {
       console.log('submitAppointmentEdit failed.', err)
     }
-  }
+  
+}
+
+
+function* StatusChange(action) {
+   
+    try {
+      console.log(action.payload)
+        const editedAppointment = action.payload
+        console.log('action.payload:',editedAppointment);
+  
+      const response = yield axios({
+        method: 'PUT',
+        url: `/api/appointment/status/${editedAppointment}`,
+      })
+        
+   
+  
+      yield put({
+        type: 'SAGA/GET_APPOINTMENTS'
+      })
+    } catch (err) {
+      console.log('submitAppointmentEdit failed.', err)
+    }
+  
+}
+  
+
 function* editAppointmemtSaga() {
+    yield takeLatest("SAGA/CHANGE_STATUS", StatusChange );
     yield takeLatest("SUBMIT_APPOINTMENT_DETAILS",submitAppointmentEdit );
     yield takeLatest("FETCH_APPOINTMENT_DETAILS", fetchAppointmentDetails);
   }
