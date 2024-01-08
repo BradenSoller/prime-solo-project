@@ -2,6 +2,11 @@ import { useParams, useHistory } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button } from '@mui/material'
+import TextField from '@mui/material/TextField';
+import AppointmentPage from '../AppointmentPage/Appointment';
+import "./editStudent.css"
+
+
 
 export default function EditAppointmentPage() {
     // Yell 'FETCH_STUDENT_DETAILS' and send a student id
@@ -101,37 +106,67 @@ console.log("editAppointment", editAppointment);
           
 
             <form>
-                <input
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="First Name"
                     type="text"
                     value={editAppointment.first_name || ''}
                     onChange={(e) => handleFirstNameChange(e.target.value)}
                 />
-                <input
+                <br />
+                <br />
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="Last Name"
                     type="text"
                     value={editAppointment.last_name || ''}
                     onChange={(e) => handleLastNameChange(e.target.value)}
                 />
-                <input
+                <br />
+                <br />
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="Email"
                     type="text"
                     value={editAppointment.email || ''}
                     onChange={(e) => handleEmail(e.target.value)}
                 />
-                <input
+                <br />
+                <br />
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="Phone Number"
                     type="text"
                     value={editAppointment.phone_number || ''}
                     onChange={(e) => handlePhoneNumber(e.target.value)}
                 />
-                <input
+                <br />
+                <br />
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="Address"
                     type="text"
                     value={editAppointment.address || ''}
                     onChange={(e) => handleAddress(e.target.value)}
                 />
-                <input
+                <br />
+                <br />
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="Zip"
                     type="text"
                     value={editAppointment.zip || ''}
                     onChange={(e) => handleZip(e.target.value)}
                 />
-                <select value={editAppointment.service_id || ''} onChange={(e) => handleService(e.target.value)}>
+                <br />
+                <br />
+                <select className = "servicesForm" value={editAppointment.service_id || ''} onChange={(e) => handleService(e.target.value)}>
                     <option value={0}>select</option>
                     <option value={1}>Rock Removal</option>
                     <option value={2}>Deck Staining</option>
@@ -140,20 +175,33 @@ console.log("editAppointment", editAppointment);
                     <option value={5}>Bursh/Junk Removal</option>
                     <option value={6}>Deck Staining</option>
                 </select>
-                <input
+                <br />
+                <br />
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="Description"
                     type="text"
                     value={editAppointment.description || ''}
                     onChange={(e) => handleDescription(e.target.value)}
                 />
-                <input
+                <br />
+                <br />
+                <TextField
+                    className="input"
+                    id="outlined-controlled"
+                    label="Budget"
                     type="text"
                     value={editAppointment.budget || ''}
                     onChange={(e) => handleBudget(e.target.value)}
                 />
+                <br />
+                <br />
                 
             
                 <Button variant='contained' color='warning' type='onSubmit' onClick={applyEdits}>Submit</Button>
             </form>
+           
         </div>
     )
 }

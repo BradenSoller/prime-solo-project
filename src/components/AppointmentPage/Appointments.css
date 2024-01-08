@@ -22,3 +22,10 @@ thead {
     background: #7A7A7A;
     color: #FCFCFC;
 }
+.DialogText{
+    float: middle;
+    position: absolute;
+    right: 70px;
+    top: 45px;
+    
+}

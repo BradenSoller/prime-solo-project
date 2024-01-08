@@ -14,7 +14,7 @@
     float: right;
         position: absolute;
         right: 115px;
-        top: 480px;
+        top: 365px;
         white-space: nowrap;
             text-align: center;
        width: 200px;
@@ -27,8 +27,8 @@
     float: right;
     float: right;
     position: absolute;
-    right: 110px;
-    top: 914px;
+    right: -85px;
+    top: 800px;
     white-space: nowrap;
     text-align: center;
     width: 200px;
@@ -71,19 +71,20 @@
 .RockText{
     position: absolute;
         left: 10px;
-        bottom: -610px;
+        bottom: -510px;
 }
 
 .RockButton{
     float: right;
         float: right;
         position: absolute;
-        right: 110px;
-        bottom: -662px;
+        right: -290px;
+        bottom: -1255px;
         white-space: nowrap;
         text-align: center;
         width: 200px;
         height: 33px;
+      
 }
 
 .BrushSlider{
@@ -97,17 +98,18 @@
 .BrushText {
     position: absolute;
     left: 10px;
-    bottom: -1050px;
+    bottom: -950px;
 }
 
 .BrushButton{
     float: right;
         float: right;
         position: absolute;
-        right: 110px;
-        bottom: -1097px;
+        right: -490px;
+        bottom: -1690px;
         white-space: nowrap;
         text-align: center;
         width: 200px;
         height: 33px;
 }
+

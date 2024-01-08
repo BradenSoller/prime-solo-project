@@ -3,14 +3,15 @@ import { put, takeLatest } from "redux-saga/effects";
 
 
 function* deleteAppointment(action) {
-    console.log(action.payload.id);
+   
   try {
       const response = yield axios({
       method: "DELETE",
-      url: `/api/appointment/${action.payload.id}`,
+      url: `/api/appointment/${action.payload}`,
     });
     yield put({
-      type: "SAGA/GET_APPOINTMENTS"
+      type: "SAGA/GET_APPOINTMENTS",
+      
      
     });
   } catch (error) {

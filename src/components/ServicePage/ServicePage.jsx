@@ -2,13 +2,16 @@ import React from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
 import './service.css';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useState } from 'react';
+import { Button } from '@mui/material';
 // This is one of our simplest components
 // It doesn't have local state
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is
 
 function ServicePage() {
-const history = useHistory()
+  const history = useHistory()
+  
 
   const MulchImages = [
     { url: "before-multch.jpg" },
@@ -31,7 +34,8 @@ const history = useHistory()
 
   ]
   const goToAppointments = () => {
-   history.push(`./schedule`)
+    history.push(`./schedule`)
+    
  }
   return (
 <div>
@@ -68,7 +72,7 @@ const history = useHistory()
         showNavs={true}
         />
       </div>
-      <button className='ScheduleService' onClick={goToAppointments}>schedule now</button>
+      <Button variant='contained' color="warning" className='ScheduleService' onClick={goToAppointments}>schedule now</Button>
       <div className='DeckSlider'> 
         <SimpleImageSlider
           width={400}
@@ -79,7 +83,7 @@ const history = useHistory()
         />
         
       </div>
-      <button className='DeckButton' onClick={goToAppointments}>schedule now</button>
+      <Button variant='contained' color="warning" className='DeckButton' onClick={goToAppointments}>schedule now</Button>
 
       <div className='RockSlider'>
         <SimpleImageSlider
@@ -91,7 +95,7 @@ const history = useHistory()
         />
 
       </div>
-      <button className='RockButton' onClick={goToAppointments}>schedule now</button>
+      <Button variant='contained' color="warning" className='RockButton' onClick={goToAppointments}>schedule now</Button>
 
 
       <div className='BrushSlider'>
@@ -104,7 +108,7 @@ const history = useHistory()
         />
 
       </div>
-      <button className='BrushButton' onClick={goToAppointments}>schedule now</button>
+      <Button variant='contained' color="warning" className='BrushButton' onClick={goToAppointments}>schedule now</Button>
 
       </div>
    

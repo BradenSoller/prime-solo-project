@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
   INNER JOIN "services"
    ON  "appointments"."service_id" = "services"."id"
   INNER JOIN "user"
-  ON "appointments"."user_id" = "user"."id"`
+  ON "appointments"."user_id" = "user"."id"
+  ORDER BY "appointments"."status" = false`
   }
   else {
     query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
@@ -154,7 +155,7 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
   const query = `
     DELETE FROM "appointments"
-    WHERE id = $1;
+    WHERE "id" = $1;
   `;
   const values = [req.params.id];
 

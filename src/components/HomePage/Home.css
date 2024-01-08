@@ -5,7 +5,7 @@ p {
 text-wrap: wrap;
 word-wrap:break-word;
 text-align: center;
-max-width: 250px;
+max-width: 525px;
 
 
 }
@@ -13,16 +13,16 @@ max-width: 250px;
 .services p {
 float: right;
     position: absolute;
-    right: 170px;
-    bottom: -190px;
+    right: 230px;
+    bottom: -235px;
     font-family: 'Poppins', sans-serif;
     float: right;
 
 
 }
-.container h2{
+.h2 {
 
-
+font-size: larger;
 
 
 
@@ -31,8 +31,8 @@ float: right;
 .services h2 {
 float: right;
     position: absolute;
-    right: 180px;
-    bottom: 30px;
+    right: 240px;
+    bottom: 15px;
     border: 5px solid;
     padding: 5px;
     font-family: 'Poppins', sans-serif;
@@ -40,10 +40,12 @@ float: right;
 
 p{
     font-family: 'Poppins', sans-serif;
+    font-size: large;
 }
 
 h2{
     font-family: 'Poppins', sans-serif;
+    font-size: 30px
 }
 
 .homeImageOne {
@@ -56,12 +58,45 @@ h2{
         
 }
 
+
+
 .homeImageTwo {
     position: absolute;
-        left: 20px;
-        bottom: -200px;
+        left: 105px;
+        bottom: -250px;
         border: 5px solid;
         padding: 0px;
         padding-bottom: 0px;
 }
+
+.homeSchedule {
+    width: 175px;
+    position: absolute;
+        left: 292px;
+        top: 300px
+}
+
+.learnMore {
+    position: absolute;
+    right: 110px;
+    top: 490px;
+    width: 175px;
+}
+
+.h2 {
+    position: absolute;
+        left: 185px;
+        top: 140px;
+        width: 600px;
+        
+    }
+
+    .homePageText{
+        position: absolute;
+            left: 115px;
+            top: 225px;
+            width: 600px;
+    }
+
+    
 

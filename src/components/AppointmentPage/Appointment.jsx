@@ -1,4 +1,4 @@
-import { useState, useEffect, } from "react"
+import { useState, useEffect, Fragment, } from "react"
 import { useDispatch, useSelector, } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import './Appointments.css'
@@ -15,31 +15,56 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 
-export default function AppointmentPage({appointment}) {
+export default function AppointmentPage({ editAppointment }) {
 
-const history = useHistory()
+    let [appointmentID, setAppointmentID] = useState(0)
+
+    const history = useHistory()
     const dispatch = useDispatch()
 
     const Appointments = useSelector(store => store.newAppointment)
-    
+
     useEffect(() => {
-     dispatch({ type: 'SAGA/GET_APPOINTMENTS' }) 
-     
+        dispatch({ type: 'SAGA/GET_APPOINTMENTS' })
+
     }, [])
 
     const user = useSelector(store => store.user)
     console.log("user:", user);
-    
 
-    const deleteAppointment = (appointment) => {
+    const [open, setOpen] = useState(false);
+
+
+
+    const handleClickOpen = (id) => {
+        setAppointmentID(id)
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+
+    const deleteAppointment = () => {
+        console.log("appointments",Appointments);
         dispatch({
             type: 'SAGA/DELETE_APPOINTMENTS',
-            payload: appointment
-            
+            payload: appointmentID
+
         })
-        
+
+        handleClose()
+
     }
 
     const handleStatus = (appointment) => {
@@ -65,68 +90,103 @@ const history = useHistory()
         },
         // hide last border
         '&:last-child td, &:last-child th': {
-          
+
         },
     }));
 
-      
-    
 
-    
+
+
+
     return (
         <div>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                <TableHead>
+                    <TableHead>
                         <TableRow>
-                        <StyledTableCell>Time Completed</StyledTableCell>
+                            <StyledTableCell>Time Completed</StyledTableCell>
                             <StyledTableCell>First Name</StyledTableCell>
                             <StyledTableCell>Last Name</StyledTableCell>
                             <StyledTableCell>Email</StyledTableCell>
                             <StyledTableCell>Phone Number</StyledTableCell>
                             <StyledTableCell>Address</StyledTableCell>
-                        <StyledTableCell>Zip</StyledTableCell>
-                        <StyledTableCell>Service</StyledTableCell>
-                        <StyledTableCell>Description</StyledTableCell>
-                        <StyledTableCell>Budget</StyledTableCell>
-                        <StyledTableCell>Status</StyledTableCell>
-                        <StyledTableCell> Edit / Remove</StyledTableCell>
+                            <StyledTableCell>Zip</StyledTableCell>
+                            <StyledTableCell>Service</StyledTableCell>
+                            <StyledTableCell>Description</StyledTableCell>
+                            <StyledTableCell>Budget</StyledTableCell>
+                            <StyledTableCell>Status</StyledTableCell>
+                            <StyledTableCell> Edit / Remove</StyledTableCell>
 
-                </TableRow>
-                </TableHead>
-                <TableBody>
-                    
-                    {Appointments.map((appointment) => {
-                        return (
-                            <StyledTableRow key={appointment.id}>
-                                <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0,-14))}</StyledTableCell>
-                                <StyledTableCell>{appointment.first_name}</StyledTableCell>
-                            <StyledTableCell>{appointment.last_name}</StyledTableCell>
-                                <StyledTableCell>{appointment.email}</StyledTableCell>
-                                <StyledTableCell>{appointment.phone_number}</StyledTableCell>
-                                <StyledTableCell>{appointment.address}</StyledTableCell>
-                                <StyledTableCell>{appointment.zip}</StyledTableCell>
-                                <StyledTableCell>{appointment.name }</StyledTableCell>
-                                <StyledTableCell>{appointment.description}</StyledTableCell>
-                                <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                {!user.isAdmin && <StyledTableCell>{appointment.status ? 'confirmed' : 'pending'}</StyledTableCell>}
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
 
-                                <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon/></IconButton>}
-                                    <IconButton aria-label="delete" onClick={(e) => deleteAppointment(appointment)}>
-                                      <DeleteForeverIcon/>
-                                    </IconButton></StyledTableCell>
-                                {user.isAdmin && <StyledTableCell><button onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </button></StyledTableCell>}
-                            </StyledTableRow>
-                            
-                        )
-                    })} 
-                  
+                        {Appointments.map((appointment) => {
+                            return (
+                                <StyledTableRow key={appointment.id}>
+                                    <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0, -14))}</StyledTableCell>
+                                    <StyledTableCell>{appointment.first_name}</StyledTableCell>
+                                    <StyledTableCell>{appointment.last_name}</StyledTableCell>
+                                    <StyledTableCell>{appointment.email}</StyledTableCell>
+                                    <StyledTableCell>{appointment.phone_number}</StyledTableCell>
+                                    <StyledTableCell>{appointment.address}</StyledTableCell>
+                                    <StyledTableCell>{appointment.zip}</StyledTableCell>
+                                    <StyledTableCell>{appointment.name}</StyledTableCell>
+                                    <StyledTableCell>{appointment.description}</StyledTableCell>
+                                    <StyledTableCell>{appointment.budget}</StyledTableCell>
+                                    {!user.isAdmin && <StyledTableCell>{appointment.status ? 'confirmed' : 'pending'}</StyledTableCell>}
 
-                </TableBody>
-            </Table>
+                                    {user.isAdmin && <StyledTableCell><Button color="warning" onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </Button></StyledTableCell>}
+                                    <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
+
+                                        <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
+                                            <DeleteForeverIcon />
+
+                                        </IconButton></StyledTableCell>
+
+                                </StyledTableRow>
+
+                            )
+
+                        
+                        })}
+
+
+
+
+                    </TableBody>
+                </Table>
             </TableContainer>
+
+
+
+
+            <Fragment>
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+
+                >
+                    <DialogTitle id="alert-dialog-title">
+                        {"Are you sure you wanna delete this ?"}
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText className="DialogText" id="alert-dialog-description">
+
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClose}>Disagree</Button>
+                        <Button onClick={deleteAppointment} autoFocus>
+                            Agree
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            </Fragment>
         </div>
     )
-
-
+    // onClick = {(e) => deleteAppointment(appointment)
 }
+
