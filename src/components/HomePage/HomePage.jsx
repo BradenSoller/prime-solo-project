@@ -79,7 +79,10 @@ history.push('/schedule')
       </div>
 
     <div className='learnMore'>
-        <Button color="warning" className='learnMore' ><b>LEARN MORE ...</b></Button>
+        <Button color="warning" className='learnMore' onClick={handleHomeService} ><b>LEARN MORE ...</b></Button>
+      </div>
+      <div className='contactHome'> 
+        <h2>Contact us !</h2> 
       </div>
     </div>
  

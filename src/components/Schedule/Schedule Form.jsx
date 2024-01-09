@@ -103,7 +103,7 @@ export default function ScheduleForm({ appointment }) {
                     </DialogTitle>
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
-                  
+                  your appointment will be looked at as soon as possible.
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
