@@ -11,6 +11,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Link from '@mui/material';
 
 
 function HomePage() {
@@ -82,7 +83,10 @@ history.push('/schedule')
         <Button color="warning" className='learnMore' onClick={handleHomeService} ><b>LEARN MORE ...</b></Button>
       </div>
       <div className='contactHome'> 
-        <h2>Contact us !</h2> 
+        <h2>Contact us !</h2>
+      </div>
+      <div className='contactNumber'>
+        <p>(718)-737-4253</p>
       </div>
     </div>
  

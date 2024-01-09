@@ -100,5 +100,8 @@ h2{
 
     
 .contactHome {
-    
+    position: absolute;
+        left: 340px;
+        bottom: -375px;
+        width: 600px;
 }
