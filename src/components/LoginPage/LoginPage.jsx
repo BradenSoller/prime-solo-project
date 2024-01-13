@@ -10,16 +10,21 @@ function LoginPage() {
       <LoginForm />
 
       <center>
+        <div className='register'>
         <button
           type="button"
-          className="btn btn_asLink"
+          className=" btn btn_asLink"
           onClick={() => {
             history.push('/registration');
           }}
         >
           Register
-        </button>
+          </button>
+        </div>
       </center>
+      <div className='registerText'>
+        <p>Don't have an account ?</p>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
+
+import './LoginForm.css'
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -25,41 +29,61 @@ function LoginForm() {
   }; // end login
 
   return (
+  
     <form className="formPanel" onSubmit={login}>
+  
+      <div className="LoginCSS">
       <h2>Login</h2>
+    </div>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
         </h3>
       )}
-      <div>
+      <div className='LoginUsername'>
         <label htmlFor="username">
-          Username:
-          <input
+          <div className='UsernameText'>
+            Username:
+          </div>
+          <div className='UsernameFeild'>
+          <TextField
+            placeholder='username'
             type="text"
             name="username"
             required
             value={username}
             onChange={(event) => setUsername(event.target.value)}
-          />
+            />
+          </div>
         </label>
       </div>
       <div>
-        <label htmlFor="password">
-          Password:
-          <input
+        <div className='passwordInput'>
+          <label htmlFor="password">
+            <div className='passwordText'>
+            Password:
+            </div>
+            <div className='PasswordFeild'>
+              <TextField
+              placeholder='password'
             type="password"
             name="password"
             required
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
+              />
+            </div>
+            
+            </label></div>
+      
       </div>
+      
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
-      </div>
-    </form>
+        <input className="Registerbtn" type="submit" name="submit" value="Log In" />
+        </div>
+      
+      </form>
+      
   );
 }
 
