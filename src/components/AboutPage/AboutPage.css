@@ -1,0 +1,33 @@
+.AboutIMG{
+        position: absolute;
+            right: 265px;
+            bottom: -500px;
+            border: 5px solid;
+}
+
+.AboutTitle {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.AboutText {
+   
+    text-align: center;
+    position: absolute;
+        right: 345px;
+        bottom: 280px;
+      
+      
+}
+
+.AboutText p {
+text-wrap: wrap;
+    word-wrap: break-word;
+    text-align: center;
+    max-width: 750px;
+}
+
+.ThankYou {
+ 
+}
+
