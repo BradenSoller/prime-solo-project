@@ -49,3 +49,8 @@ body {
   
     
 }
+
+.scheduleHeading {
+    text-align: center;
+    text-decoration: underline;
+}

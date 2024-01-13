@@ -47,7 +47,9 @@ export default function ScheduleForm({ appointment }) {
 
     const dispatch = useDispatch();
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const getServices = () => {
         dispatch({ type: "SAGA/GET_SERVICES" });
@@ -84,12 +86,25 @@ export default function ScheduleForm({ appointment }) {
 
     };
 
+    const FillOutFormData = () => {
+        setFirstName('Bethany')
+        setLastName('Stevens')
+        setEmail('BethanyStevens@gmail.com')
+        setPhoneNumber('952-300-5247')
+        setAddress('186 harlson Drive')
+        setZip('Burnsville')
+        setDescription('how long does this process take ?')
+        setBudget('$1,000')
 
+        setService('Deck Staining')
+}
 
     return (
         
         <div>
-
+            <div className="scheduleHeading">
+            <h2 onClick={FillOutFormData}>Schedule</h2>
+            </div>
             <form onSubmit={handleClickOpen}>
             <Fragment>
                 <Dialog
@@ -176,14 +191,15 @@ export default function ScheduleForm({ appointment }) {
                 />
                 <br />
                 <br />
-                <select className="servicesForm" value={service} onChange={(e) => setService(e.target.value)}>
+                <select className="servicesForm" value={service} required onChange={(e) => setService(e.target.value)}>
                     <option value={0}>select</option>
                     <option value={1}>Rock Removal</option>
                     <option value={2}>Deck Staining</option>
                     <option value={3}>Weeding</option>
-                    <option value={4}>Tree Triming </option>
-                    <option value={5}>Bursh/Junk Removal</option>
-                    <option value={6}>Deck Staining</option>
+                    <option value={4}>Tree/Bush Triming </option>
+                    <option value={5}>Brush/Junk Removal</option>
+                    <option value={6}>Mulching</option>
+    
                 </select>
                 <br />
                 <br />

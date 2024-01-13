@@ -13,8 +13,8 @@
     float: right;
     float: right;
         position: absolute;
-        right: 115px;
-        top: 365px;
+        right: 165px;
+        top: 467px;
         white-space: nowrap;
             text-align: center;
        width: 200px;
@@ -27,8 +27,8 @@
     float: right;
     float: right;
     position: absolute;
-    right: -85px;
-    top: 800px;
+    right: -40px;
+    top: 1000px;
     white-space: nowrap;
     text-align: center;
     width: 200px;
@@ -41,7 +41,7 @@
     float: right;
     position: absolute;
     right: 10px;
-    top: 600px;
+    top: 700px;
     border: 5px solid;
 }
 .MulchText{
@@ -56,7 +56,7 @@
 .DeckText{
     position: absolute;
         left: 10px;
-        top: 575px;
+        top: 675px;
 
 }
 
@@ -64,22 +64,22 @@
         float: right;
             position: absolute;
             right: 10px;
-            bottom: -625px;
+            bottom: -830px;
             border: 5px solid;
 }
 
 .RockText{
     position: absolute;
-        left: 10px;
-        bottom: -510px;
+        left: 30px;
+        bottom: -675px;
 }
 
 .RockButton{
     float: right;
         float: right;
         position: absolute;
-        right: -290px;
-        bottom: -1255px;
+        right: -240px;
+        bottom: -1532px;
         white-space: nowrap;
         text-align: center;
         width: 200px;
@@ -91,25 +91,76 @@
     float: right;
         position: absolute;
         right: 10px;
-        bottom: -1060px;
+        bottom: -1365px;
         border: 5px solid;
 
 }
 .BrushText {
     position: absolute;
     left: 10px;
-    bottom: -950px;
+    bottom: -1200px;
 }
 
 .BrushButton{
     float: right;
         float: right;
         position: absolute;
-        right: -490px;
-        bottom: -1690px;
+        right: 165px;
+        bottom: -2030px;
         white-space: nowrap;
         text-align: center;
         width: 200px;
         height: 33px;
 }
 
+.TrimmingSlider {
+float: right;
+    position: absolute;
+    right: 10px;
+    bottom: -1890px;
+    border: 5px solid;
+}
+
+.WeedingSlider {
+float: right;
+    position: absolute;
+    right: 10px;
+    bottom: -2420px;
+    border: 5px solid;
+}
+
+.WeedingButton {
+float: right;
+    float: right;
+    position: absolute;
+    right: 165px;
+    bottom: -3005px;
+    white-space: nowrap;
+    text-align: center;
+    width: 200px;
+    height: 33px;
+}
+
+.TrimmingButton {
+float: right;
+    float: right;
+    position: absolute;
+    right: 165px;
+    bottom: -2515px;
+    white-space: nowrap;
+    text-align: center;
+    width: 200px;
+    height: 33px;
+}
+
+.TrimmingText {
+position: absolute;
+    left: 10px;
+    bottom: -1740px;
+}
+
+.WeedingText {
+position: absolute;
+    left: 10px;
+    bottom: -2260px;
+}
