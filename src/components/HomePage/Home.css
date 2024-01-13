@@ -50,7 +50,7 @@ h2{
 
 .homeImageOne {
     position: absolute;
-        right: 35px;
+        right: 40px;
         top: 180px;
         border: 5px solid;
         padding: 0px;
@@ -63,10 +63,10 @@ h2{
 .homeImageTwo {
     position: absolute;
         left: 105px;
-        bottom: -250px;
+        bottom: -273px;
         border: 5px solid;
-        padding: 0px;
-        padding-bottom: 0px;
+       
+      
 }
 
 .homeSchedule {
@@ -79,16 +79,16 @@ h2{
 .learnMore {
     position: absolute;
     right: 110px;
-    top: 490px;
+    top: 520px;
     width: 175px;
 }
 
 .h2 {
     position: absolute;
-        left: 185px;
+        left: 220px;
         top: 140px;
         width: 600px;
-        
+        text-decoration: underline;
     }
 
     .homePageText{
@@ -101,7 +101,21 @@ h2{
     
 .contactHome {
     position: absolute;
-        left: 340px;
-        bottom: -375px;
+        left: 420px;
+        bottom: -443px;
         width: 600px;
+}
+
+.contactNumber{
+    position: absolute;
+        left: 630px;
+        bottom: -405px;
+        width: 600px;
+}
+
+.contactEmail{
+    position: absolute;
+    left: 780px;
+    bottom: -405px;
+    width: 600px;
 }
