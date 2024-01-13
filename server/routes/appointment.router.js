@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
    ON  "appointments"."service_id" = "services"."id"
   INNER JOIN "user"
   ON "appointments"."user_id" = "user"."id"
-  ORDER BY "appointments"."status" = false`
+  ORDER BY "appointments"."status" = true`
   }
   else {
     query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 

@@ -29,3 +29,11 @@ thead {
     top: 45px;
     
 }
+
+.confirmed {
+    color: yellowgreen;
+}
+
+.pending {
+    color: orange;
+}

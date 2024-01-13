@@ -22,9 +22,13 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+// import AppointmentHelp from "./AppointmentHelp"
 
 
-export default function AppointmentPage({ editAppointment }) {
+export default function AppointmentPage({ appointment }) {
+
+
+    console.log('appointment', appointment);
 
     let [appointmentID, setAppointmentID] = useState(0)
 
@@ -35,7 +39,7 @@ export default function AppointmentPage({ editAppointment }) {
 
     useEffect(() => {
         dispatch({ type: 'SAGA/GET_APPOINTMENTS' })
-
+        window.scrollTo(0,0)
     }, [])
 
     const user = useSelector(store => store.user)
@@ -56,7 +60,7 @@ export default function AppointmentPage({ editAppointment }) {
 
 
     const deleteAppointment = () => {
-        console.log("appointments",Appointments);
+        console.log("appointments", Appointments);
         dispatch({
             type: 'SAGA/DELETE_APPOINTMENTS',
             payload: appointmentID
@@ -99,6 +103,7 @@ export default function AppointmentPage({ editAppointment }) {
 
 
     return (
+
         <div>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -112,7 +117,7 @@ export default function AppointmentPage({ editAppointment }) {
                             <StyledTableCell>Address</StyledTableCell>
                             <StyledTableCell>Zip</StyledTableCell>
                             <StyledTableCell>Service</StyledTableCell>
-                            <StyledTableCell>Description</StyledTableCell>
+                            <StyledTableCell>Qeustions/Comments</StyledTableCell>
                             <StyledTableCell>Budget</StyledTableCell>
                             <StyledTableCell>Status</StyledTableCell>
                             <StyledTableCell> Edit / Remove</StyledTableCell>
@@ -121,8 +126,10 @@ export default function AppointmentPage({ editAppointment }) {
                     </TableHead>
                     <TableBody>
 
-                        {Appointments.map((appointment) => {
+                        { Appointments.map((appointment) => {
                             return (
+                                
+        
                                 <StyledTableRow key={appointment.id}>
                                     <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0, -14))}</StyledTableCell>
                                     <StyledTableCell>{appointment.first_name}</StyledTableCell>
@@ -134,7 +141,7 @@ export default function AppointmentPage({ editAppointment }) {
                                     <StyledTableCell>{appointment.name}</StyledTableCell>
                                     <StyledTableCell>{appointment.description}</StyledTableCell>
                                     <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                    {!user.isAdmin && <StyledTableCell>{appointment.status ? 'confirmed' : 'pending'}</StyledTableCell>}
+                                    {!user.isAdmin && <StyledTableCell className = {appointment.status ? 'confirmed' : 'pending'}>{appointment.status ? 'confirmed' : 'pending'}</StyledTableCell>}
 
                                     {user.isAdmin && <StyledTableCell><Button color="warning" onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </Button></StyledTableCell>}
                                     <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
@@ -146,9 +153,10 @@ export default function AppointmentPage({ editAppointment }) {
 
                                 </StyledTableRow>
 
+                                
                             )
 
-                        
+
                         })}
 
 
@@ -185,8 +193,13 @@ export default function AppointmentPage({ editAppointment }) {
                     </DialogActions>
                 </Dialog>
             </Fragment>
+           
+          
+
+                   
         </div>
     )
     // onClick = {(e) => deleteAppointment(appointment)
+
 }
 
