@@ -110,7 +110,7 @@ history.push('/schedule')
         <img height={400} width={550} src="/rock-home.jpg" />
       </div>
       <div className='homeImageTwo'>
-        <img height={400} width={550} src="/deck-home-page.jpg" />
+        <img height={400} width={550} src="/About.jpg" />
 
       </div>
       <div className='services'>

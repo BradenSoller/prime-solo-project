@@ -30,10 +30,12 @@ thead {
     
 }
 
-.confirmed {
-    color: yellowgreen;
+#confirmed{
+    color: rgb(5, 177, 11);
+    font-size: larger;
 }
 
-.pending {
-    color: orange;
+#pending {
+    font-size: larger;
+    color: orange
 }

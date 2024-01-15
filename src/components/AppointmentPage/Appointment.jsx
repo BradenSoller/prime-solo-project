@@ -141,7 +141,7 @@ export default function AppointmentPage({ appointment }) {
                                     <StyledTableCell>{appointment.name}</StyledTableCell>
                                     <StyledTableCell>{appointment.description}</StyledTableCell>
                                     <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                    {!user.isAdmin && <StyledTableCell className = {appointment.status ? 'confirmed' : 'pending'}>{appointment.status ? 'confirmed' : 'pending'}</StyledTableCell>}
+                                    {!user.isAdmin && <StyledTableCell id={appointment.status ? "confirmed" : "pending"}>{appointment.status ? 'confirmed ' : 'pending '}</StyledTableCell>}
 
                                     {user.isAdmin && <StyledTableCell><Button color="warning" onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </Button></StyledTableCell>}
                                     <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
