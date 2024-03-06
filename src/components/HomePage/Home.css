@@ -150,4 +150,9 @@ width: 600px;
         left: .5%;
         top: 3.3%;
         width: 600px;
+        transition: 90ms ease-in-out;
+}
+
+.cardPlacement:hover {
+    transform: scale(1.03);
 }
