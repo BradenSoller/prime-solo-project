@@ -89,7 +89,7 @@ history.push('/schedule')
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel> */}
-
+<div className='cardPlacement'>
       <div className="container">
         <div className='h2'>
         <h2>Young Buck Services</h2>
@@ -97,14 +97,18 @@ history.push('/schedule')
           </div>
           
         </div>
+        <div className='Card'>
         <div className='homePageText'>
         <p>texttexttexttexttexttexttexttexttexttexttexttextttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+        <Button className="homeSchedule" variant ="contained" onClick={handleHomeSchedule} color="warning" >Schedule Now</Button>
+          </div>
+        </div>
         </div>
       </div>
       
-      <div>
-        <Button className="homeSchedule" variant ="contained" onClick={handleHomeSchedule} color="warning" >Schedule Now</Button>
-      </div>
+    
+     
+      
       
       <div className='homeImageOne'>
         <img height={400} width={550} src="/rock-home.jpg" />

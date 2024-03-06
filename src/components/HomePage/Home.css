@@ -70,10 +70,10 @@ h2{
 }
 
 .homeSchedule {
-    width: 175px;
+    width: 300px;
     position: absolute;
-        left: 292px;
-        top: 300px
+        left: -5.5%;
+      top: 50%;
 }
 
 .learnMore {
@@ -85,7 +85,7 @@ h2{
 
 .h2 {
     position: absolute;
-        left: 220px;
+        left: 230px;
         top: 140px;
         width: 600px;
         text-decoration: underline;
@@ -93,10 +93,35 @@ h2{
 
     .homePageText{
         position: absolute;
-            left: 115px;
-            top: 225px;
+            left: 6%;
+            top: 50px;
             width: 600px;
+            text-align: center;
     }
+
+.Card {
+width: 600px;
+    height: 400px;
+    background-color: var(--greenish);
+    font-family: var(--srcsansreg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 4px rgba(3, 3, 0, 0.4);
+    border-radius: 8px;
+    transition: 90ms ease-in-out;
+    margin: 80px;
+    position: absolute;
+        left: .5%;
+        top: 80px;
+    
+
+   
+  
+     
+
+       
+}
 
     
 .contactHome {
@@ -118,4 +143,11 @@ h2{
     left: 780px;
     bottom: -405px;
     width: 600px;
+}
+
+.cardPlacement {
+    position: absolute;
+        left: .5%;
+        top: 3.3%;
+        width: 600px;
 }
