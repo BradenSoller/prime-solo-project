@@ -10,14 +10,33 @@ max-width: 525px;
 
 }
 
-.services p {
+.services  {
 float: right;
     position: absolute;
-    right: 230px;
-    bottom: -235px;
+    right: 43px;
+    bottom: 40px;
     font-family: 'Poppins', sans-serif;
     float: right;
 
+    
+
+
+}
+.ServicesCard{
+    width: 250px;
+        height: 400px;
+        background-color: var(--greenish);
+        font-family: var(--srcsansreg);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 2px 4px rgba(3, 3, 0, 0.4);
+        border-radius: 8px;
+        transition: 90ms ease-in-out;
+        margin: 50px;
+           position: absolute;
+    right: 140px;
+    bottom: -315px;
 
 }
 .h2 {
@@ -31,11 +50,11 @@ font-size: larger;
 .services h2 {
 float: right;
     position: absolute;
-    right: 240px;
-    bottom: 15px;
-    border: 5px solid;
-    padding: 5px;
+    right: 27px;
+    bottom: 260px;
     font-family: 'Poppins', sans-serif;
+    float: right;
+    text-decoration: underline;
 }
 
 p{
@@ -78,9 +97,9 @@ h2{
 
 .learnMore {
     position: absolute;
-    right: 110px;
-    top: 520px;
-    width: 175px;
+        right: -10px;
+        bottom: -20px;
+        width: 200px;
 }
 
 .h2 {
