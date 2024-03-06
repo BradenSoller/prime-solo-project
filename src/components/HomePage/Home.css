@@ -36,7 +36,7 @@ float: right;
         margin: 50px;
            position: absolute;
     right: 140px;
-    bottom: -315px;
+    bottom: -322px;
 
 }
 .h2 {
@@ -173,5 +173,9 @@ width: 600px;
 }
 
 .cardPlacement:hover {
+    transform: scale(1.03);
+}
+
+.ServicesCard:hover {
     transform: scale(1.03);
 }
