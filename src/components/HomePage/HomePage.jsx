@@ -39,6 +39,52 @@ getServices()
 
   const history = useHistory()
 
+  // const MulchImages = [
+  //   { url: "before-multch.jpg" },
+  //   { url: "AFTER-ADD-MULTCH.jpg" }
+  // ]
+
+  // const TrimmingImages = [
+  //   { url: 'before-trimming.jpg' },
+  //   { url: 'After-trimming.jpg' }
+
+  // ]
+
+  // const WeedingImages = [
+  //   { url: 'before-weeding.png' },
+  //   { url: 'after-weeding.png' }
+
+  // ]
+
+  // const DeckImages = [
+  //   { url: 'deck-before-trailer-jpg.jpg' },
+  //   { url: 'deck-after-trailer.jpg' }
+  // ]
+
+  // const RockImages = [
+  //   { url: 'side-rock-before.jpg' },
+  //   { url: 'side-rock-after.jpg' }
+  // ]
+
+  // const BrushImages = [
+  //   { url: 'brush-cleanup-before.jpg' },
+  //   { url: 'brush-cleanup-after.jpg' }
+
+
+  const HomeImages = [
+    { url: "before-multch.jpg" },
+    { url: "AFTER-ADD-MULTCH.jpg" },
+    { url: 'before-trimming.jpg' },
+    { url: 'After-trimming.jpg' },
+    { url: 'before-weeding.png' },
+    { url: 'after-weeding.png' },
+    { url: 'deck-before-trailer-jpg.jpg' },
+    { url: 'deck-after-trailer.jpg' }, 
+    { url: 'side-rock-before.jpg' },
+    { url: 'side-rock-after.jpg' },
+    { url: 'brush-cleanup-before.jpg' },
+    { url: 'brush-cleanup-after.jpg' }
+]
   const handleHomeSchedule = () => {
 history.push('/schedule')
   }
@@ -110,13 +156,22 @@ history.push('/schedule')
      
       
       
-      <div className='homeImageOne'>
+      {/* <div className='homeImageOne'>
         <img height={400} width={550} src="/rock-home.jpg" />
-      </div>
+      </div> */}
       <div className='homeImageTwo'>
         <img height={400} width={550} src="/About.jpg" />
 
       </div>
+
+      <div className='homeImageOne'>
+        <SimpleImageSlider
+          width={550}
+          height={400}
+          images={HomeImages}
+          showBullets={true}
+          showNavs={true}
+        />
       <div className='ServicesCard'> 
       <div className='services'>
 
@@ -140,12 +195,13 @@ history.push('/schedule')
 
       </div>
     </div>
- 
+</div>
+  
    
         
     
   );
 }
 
-// this allows us to use <App /> in index.js
+
 export default HomePage;
