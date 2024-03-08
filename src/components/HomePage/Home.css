@@ -89,10 +89,10 @@ h2{
 }
 
 .homeSchedule {
-    width: 300px;
+    width: 315px;
     position: absolute;
-        left: -5.5%;
-      top: 50%;
+        left: 18%;
+      top: 110%;
 }
 
 .learnMore {

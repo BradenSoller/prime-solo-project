@@ -126,8 +126,8 @@ history.push('/schedule')
 
     <div className='learnMore'>
         <Button color="warning" className='learnMore' onClick={handleHomeService} ><b>LEARN MORE ...</b></Button>
-      </div>
         </div>
+      </div>
       </div>
       <div className='contactHome'> 
         <h2>Contact us !</h2>
