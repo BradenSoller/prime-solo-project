@@ -55,8 +55,8 @@
 
 .DeckText{
     position: absolute;
-        left: 10px;
-        top: 705px;
+        left: 40px;
+        top: px;
 
 }
 
@@ -173,8 +173,8 @@ position: absolute;
 
 .DeckHeader{
 position: absolute;
-    left: 205px;
-    top: 650px;
+    left: 120px;
+    top: -10px;
 }
 
 .RockHeader {
@@ -222,4 +222,21 @@ position: absolute;
 
 .MulchCard:hover {
     transform: scale(1.03);
+}
+
+.DeckCard {
+        width: 600px;
+            height: 450px;
+            background-color: var(--greenish);
+            font-family: var(--srcsansreg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 2px 4px rgba(3, 3, 0, 0.4);
+            border-radius: 8px;
+            transition: 90ms ease-in-out;
+            margin: 80px;
+            position: absolute;
+            left: 0%;
+            top: 630px;
 }

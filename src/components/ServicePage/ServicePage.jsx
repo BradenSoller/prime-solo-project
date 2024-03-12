@@ -72,6 +72,7 @@ function ServicePage() {
         </div>
       </div>
       
+      <div className='DeckCard'>
         <div className='DeckHeader'>
         <h3>Deck Staining</h3>
         </div>
@@ -79,6 +80,7 @@ function ServicePage() {
         <p>
           Elevate your outdoor space with our deck staining services. We go beyond aesthetics, starting with thorough cleaning, sanding, and even power washing if needed. Our expert team guides you in selecting the ideal stain, offering customization options for colors and finishes. With meticulous application techniques, we ensure a flawless finish that enhances your deck's beauty and longevity. Our weather-resistant stains provide protection from UV rays and the elements. Trust us for expertise, quality materials, and a customer-centric approach. Transform your deck into a durable and visually stunning outdoor oasis. Contact us for a consultation and experience the difference of our comprehensive deck staining services.</p>
 
+        </div>
       </div>
      
         <div className='RockHeader'>
