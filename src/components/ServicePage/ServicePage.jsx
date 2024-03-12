@@ -58,7 +58,7 @@ function ServicePage() {
  }
   return (
 <div>
-      
+      <div className='MulchCard'>
         <div className='MulchHeader'>
         <h3>
         Mulching
@@ -69,6 +69,7 @@ function ServicePage() {
        
           Elevate the health and beauty of your garden with our premium mulching services. Imbue your landscape with a protective layer that conserves moisture, suppresses weeds, and enhances soil fertility. Our expert team ensures precise and aesthetically pleasing mulch application, fostering optimal conditions for plant growth. Embrace the transformative power of mulching for a vibrant and sustainable garden that stands out in both beauty and vitality.
       </p>
+        </div>
       </div>
       
         <div className='DeckHeader'>

@@ -47,8 +47,8 @@
 .MulchText{
   
         position: absolute;
-        left: 10px;
-        top: 185px;
+        left: 40px;
+        top: 50px;
        
 }
 
@@ -167,8 +167,8 @@ position: absolute;
 
 .MulchHeader {
     position: absolute;
-        left: 225px;
-        top: 140px;
+        left: 260px;
+        top: 10px;
 }
 
 .DeckHeader{
@@ -201,3 +201,25 @@ position: absolute;
     bottom: -2050px;
 }
 
+.MulchCard { 
+    width: 600px;
+        height: 400px;
+        background-color: var(--greenish);
+        font-family: var(--srcsansreg);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 2px 4px rgba(3, 3, 0, 0.4);
+        border-radius: 8px;
+        transition: 90ms ease-in-out;
+        margin: 80px;
+        position: absolute;
+            left: 0%;
+            top: 80px;
+
+
+}
+
+.MulchCard:hover {
+    transform: scale(1.03);
+}
