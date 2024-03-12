@@ -240,3 +240,7 @@ position: absolute;
             left: 0%;
             top: 630px;
 }
+
+.DeckCard:hover {
+    transform: scale(1.03);
+}
