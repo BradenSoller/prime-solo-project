@@ -91,7 +91,7 @@ function ServicePage() {
 
         </div>
       </div>
-      
+      <div className='BrushCard'>
         <div className='BrushHeader'>
         
           <h3>Brush/Junk Removal</h3>
@@ -101,6 +101,7 @@ function ServicePage() {
 
 </p>
 
+        </div>
       </div>
 
       
