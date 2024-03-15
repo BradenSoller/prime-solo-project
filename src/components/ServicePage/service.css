@@ -324,3 +324,7 @@ position: absolute;
     left: 0%;
     top: 335%;
 }
+
+.WeedingCard:hover {
+    transform: scale(1.03);
+}
