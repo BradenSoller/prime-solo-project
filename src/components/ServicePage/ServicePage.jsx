@@ -104,13 +104,14 @@ function ServicePage() {
         </div>
       </div>
 
-      
+      <div className='TrimmingCard'>
         <div className='TrimmingHeader'>
           <h3>Tree/Bush Trimming</h3>
         </div>
         <div className='TrimmingText'>
         <p>Elevate the beauty of your outdoor space with our expert bush and tree trimming services. Our skilled arborists provide precise trimming, ensuring a meticulously shaped and healthy landscape. From seasonal maintenance to customized solutions, we tailor our services to meet your unique needs. Our commitment extends to safety, cleanliness, and promoting plant vitality. Experience the benefits of enhanced curb appeal, improved plant health, increased property value, and the expertise of our professional team. Transform your outdoor haven with our comprehensive trimming services—contact us today for a beautifully manicured landscape.</p>
 
+        </div>
       </div>
       
         <div className='WeedingHeader'>

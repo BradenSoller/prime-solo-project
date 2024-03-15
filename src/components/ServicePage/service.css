@@ -155,8 +155,8 @@ float: right;
 
 .TrimmingText {
 position: absolute;
-    left: 20px;
-    bottom: -1870px;
+    left: 6%; 
+    top: 14%;
 }
 
 .WeedingText {
@@ -191,8 +191,8 @@ position: absolute;
 
 .TrimmingHeader {
 position: absolute;
-    left: 185px;
-    bottom: -1510px;
+    left: 32.5%;
+    top: 4%;
 }
 
 .WeedingHeader {
@@ -284,5 +284,26 @@ position: absolute;
 }
 
 .BrushCard:hover {
+    transform: scale(1.03);
+}
+
+.TrimmingCard {
+    width: 600px;
+        height: 450px;
+        background-color: var(--greenish);
+        font-family: var(--srcsansreg);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 2px 4px rgba(3, 3, 0, 0.4);
+        border-radius: 8px;
+        transition: 90ms ease-in-out;
+        margin: 80px;
+        position: absolute;
+        left: 0%;
+        top: 270%;
+}
+
+.TrimmingCard:hover {
     transform: scale(1.03);
 }
