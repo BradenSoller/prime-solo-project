@@ -113,14 +113,16 @@ function ServicePage() {
 
         </div>
       </div>
-      
+      <div className='WeedingCard'>
         <div className='WeedingHeader'>
           <h3>Weeding</h3>
         </div>
       <div className='WeedingText'>
         <p>Revitalize your garden with our meticulous weeding services. Bid farewell to unwanted invaders that compromise your green haven's beauty. Our skilled team meticulously removes weeds, restoring the charm of your garden while promoting a healthier growth environment for your cherished plants. Rediscover the joy of a pristine and well-maintained landscape with our expert weeding solutions.</p>
 
+        </div>
       </div>
+
       <div className='MulchSlider'>
       <SimpleImageSlider
         width={500}
