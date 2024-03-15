@@ -82,13 +82,14 @@ function ServicePage() {
 
         </div>
       </div>
-     
+     <div className='RockCard'>
         <div className='RockHeader'>
           <h3>Rock Removal</h3>
         </div>
       <div className='RockText'>
         <p> Efficiently transform your outdoor space by availing our landscape rocks removal service. Say goodbye to cumbersome rocks cluttering your lawn, and embrace a cleaner, more aesthetically pleasing environment. Our experienced team ensures a swift and hassle-free removal process, leaving your landscape ready for your envisioned transformation.</p>
 
+        </div>
       </div>
       
         <div className='BrushHeader'>
