@@ -282,3 +282,7 @@ position: absolute;
             left: 0%;
             top: 205%;
 }
+
+.BrushCard:hover {
+    transform: scale(1.03);
+}
