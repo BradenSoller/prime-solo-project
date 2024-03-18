@@ -171,4 +171,47 @@ router.delete('/:id', (req, res) => {
 });
 
 
+router.get('/pending', (req, res) => {
+  const getPendingAppointments = 
+  `
+  SELECT * FROM "appointments"
+      WHERE "status" = true;
+  `
+ 
+  pool.query(getPendingAppointments)
+  pool
+  .query(query)
+  .then(result => {
+    console.log("results.rows", result.rows);
+    res.send(result.rows);
+    console.log();
+  })
+  .catch((err) => {
+    console.log("ERROR: Get all appointments", err);
+    res.sendStatus(500);
+  });
+
+});
+
+router.get('/accepted', (req, res) => {
+  console.log('running removed events GET')
+  const getAcceptedEvents = 
+  `
+  SELECT * FROM "appointments"
+      WHERE "status" = false;
+  `
+ 
+  pool.query(getAcceptedEvents)
+  .then((result) => {
+      console.log(result.rows, 'results of removed events query')
+      res.send(result.rows)
+      
+
+    })
+    .catch((err) => {
+      console.log("GET /removedevents fail:", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
