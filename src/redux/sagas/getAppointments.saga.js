@@ -12,7 +12,7 @@ function* getAppointments() {
   }
 }
 
-function* getPendingEvents() {
+function* getPendingAppointments() {
   try {
     const response = yield axios({
       method: "GET",
@@ -27,9 +27,26 @@ function* getPendingEvents() {
   }
 }
 
+
+function* getAcceptedAppointments() {
+  try {
+    const response = yield axios({
+      method: "GET",
+      url: "/api/appointment/accepted",
+    });
+    yield put({
+      type: "SET_ACCEPTED",
+      payload: response.data,
+    });
+  } catch (error) {
+    console.log("Unable to get removed events from server", error);
+  }
+}
+
 function* getAppointmentSaga() {
   yield takeLatest("SAGA/GET_APPOINTMENTS", getAppointments);
-  yield takeLatest("SAGA/PENDING_APPOINTMENTS", getPendingEvents)
+  yield takeLatest("SAGA/PENDING_APPOINTMENTS", getPendingAppointments)
+  yield takeLatest("SAGA/ACCEPTED_APPOINTMENTS", getAcceptedAppointments)
 }
 
 export default getAppointmentSaga;
