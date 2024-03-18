@@ -166,10 +166,11 @@ history.push('/schedule')
 
       <div className='homeImageOne'>
         <SimpleImageSlider
+          autoPlay 
+          autoPlayDelay={2.5}
           width={550}
           height={400}
           images={HomeImages}
-          showBullets={true}
           showNavs={true}
         />
       <div className='ServicesCard'> 
