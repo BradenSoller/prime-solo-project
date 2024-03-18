@@ -175,7 +175,7 @@ router.get('/pending', (req, res) => {
   const getPendingAppointments = 
   `
   SELECT * FROM "appointments"
-      WHERE "status" = true;
+      WHERE "status" = false;
   `
  
   pool.query(getPendingAppointments)
@@ -198,7 +198,7 @@ router.get('/accepted', (req, res) => {
   const getAcceptedEvents = 
   `
   SELECT * FROM "appointments"
-      WHERE "status" = false;
+      WHERE "status" = true;
   `
  
   pool.query(getAcceptedEvents)
