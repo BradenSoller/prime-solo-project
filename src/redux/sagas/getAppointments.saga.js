@@ -12,8 +12,24 @@ function* getAppointments() {
   }
 }
 
+function* getPendingEvents() {
+  try {
+    const response = yield axios({
+      method: "GET",
+      url: "/api/appointment/pending",
+    });
+    yield put({
+      type: "SET_PENDING",
+      payload: response.data,
+    });
+  } catch (error) {
+    console.log("Unable to get removed events from server", error);
+  }
+}
+
 function* getAppointmentSaga() {
   yield takeLatest("SAGA/GET_APPOINTMENTS", getAppointments);
+  yield takeLatest("SAGA/PENDING_APPOINTMENTS", getPendingEvents)
 }
 
 export default getAppointmentSaga;
