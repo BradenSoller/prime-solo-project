@@ -5,7 +5,7 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
+router.get('/all', (req, res) => {
   let query = ''
   if (req.user.isAdmin) {
     query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
@@ -194,6 +194,7 @@ router.get('/pending', (req, res) => {
 });
 
 router.get('/accepted', (req, res) => {
+  
   console.log('running removed events GET')
   const getAcceptedEvents = 
   `
@@ -203,8 +204,9 @@ router.get('/accepted', (req, res) => {
  
   pool.query(getAcceptedEvents)
   .then((result) => {
-      console.log(result.rows, 'results of removed events query')
-      res.send(result.rows)
+    console.log(result.rows, 'results of removed events query')
+    console.log("result rows", result.rows[0]);
+      res.send(result.rows[0])
       
 
     })

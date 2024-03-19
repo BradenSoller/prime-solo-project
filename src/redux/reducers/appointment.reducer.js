@@ -12,7 +12,7 @@ const newAppointment = (state = [], action) => {
 
 const approved = (state = [], action) => {
     switch (action.type) {
-      case "SET_ACCEPTED ":
+      case "SET_ACCEPTED":
         return action.payload;
       default:
         return state;

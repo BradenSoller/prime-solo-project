@@ -46,6 +46,8 @@ export default function AppointmentPage({ appointment }) {
 
     useEffect(() => {
         dispatch({ type: 'SAGA/GET_APPOINTMENTS' })
+        dispatch({ type: 'SAGA/PENDING_APPOINTMENTS' })
+        dispatch({ type: 'SAGA/ACCEPTED_APPOINTMENTS' })
         window.scrollTo(0,0)
     }, [])
 
