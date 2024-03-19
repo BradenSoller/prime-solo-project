@@ -22,7 +22,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-// import AppointmentHelp from "./AppointmentHelp"
+
+
 
 
 export default function AppointmentPage({ appointment }) {
@@ -35,7 +36,13 @@ export default function AppointmentPage({ appointment }) {
     const history = useHistory()
     const dispatch = useDispatch()
 
-    const Appointments = useSelector(store => store.newAppointment)
+    const Appointments = useSelector(store => store.newAppointment.newAppointment)
+    const pendingAppointments = useSelector(store => store.newAppointment.pending)
+    const acceptedAppointments = useSelector(store => store.newAppointment.approved)
+
+    console.log("Pending appointments:", pendingAppointments);
+    console.log("Accepted appointments:", acceptedAppointments);
+
 
     useEffect(() => {
         dispatch({ type: 'SAGA/GET_APPOINTMENTS' })
