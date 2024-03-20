@@ -203,11 +203,149 @@ export default function AppointmentPage({ appointment }) {
                     </DialogActions>
                 </Dialog>
             </Fragment>
+            { user.isAdmin && 
+                <div className="pendingTable">
+                      <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                            <TableHead>
+                                <TableRow>
+                                    <StyledTableCell>Time Completed</StyledTableCell>
+                                    <StyledTableCell>First Name</StyledTableCell>
+                                    <StyledTableCell>Last Name</StyledTableCell>
+                                    <StyledTableCell>Email</StyledTableCell>
+                                    <StyledTableCell>Phone Number</StyledTableCell>
+                                    <StyledTableCell>Address</StyledTableCell>
+                                    <StyledTableCell>Zip</StyledTableCell>
+                                    <StyledTableCell>Service</StyledTableCell>
+                                    <StyledTableCell>Qeustions/Comments</StyledTableCell>
+                                    <StyledTableCell>Budget</StyledTableCell>
+                                    <StyledTableCell>Status</StyledTableCell>
+                                    <StyledTableCell> Edit / Remove</StyledTableCell>
+
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                           
+
+          
+                        
+                                {user.isAdmin && pendingAppointments.map((appointment) => {
+                                    return (
+
+
+                                        <StyledTableRow key={appointment.id}>
+                                            <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0, -14))}</StyledTableCell>
+                                            <StyledTableCell>{appointment.first_name}</StyledTableCell>
+                                            <StyledTableCell>{appointment.last_name}</StyledTableCell>
+                                            <StyledTableCell>{appointment.email}</StyledTableCell>
+                                            <StyledTableCell>{appointment.phone_number}</StyledTableCell>
+                                            <StyledTableCell>{appointment.address}</StyledTableCell>
+                                            <StyledTableCell>{appointment.zip}</StyledTableCell>
+                                            <StyledTableCell>{appointment.name}</StyledTableCell>
+                                            <StyledTableCell>{appointment.description}</StyledTableCell>
+                                            <StyledTableCell>{appointment.budget}</StyledTableCell>
+                                            {!user.isAdmin && <StyledTableCell id={appointment.status ? "confirmed" : "pending"}>{appointment.status ? 'confirmed ' : 'pending '}</StyledTableCell>}
+
+                                            {user.isAdmin && <StyledTableCell><Button color="warning" onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </Button></StyledTableCell>}
+                                            <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
+
+                                                <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
+                                                    <DeleteForeverIcon />
+
+                                                </IconButton></StyledTableCell>
+
+                                        </StyledTableRow>
+
+
+                                    )
+
+
+                                })}
+
+
+
+
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+
            
           
+                </div>
+            }
+            {user.isAdmin &&
+                <div className="pendingTable">
+                    <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                            <TableHead>
+                                <TableRow>
+                                    <StyledTableCell>Time Completed</StyledTableCell>
+                                    <StyledTableCell>First Name</StyledTableCell>
+                                    <StyledTableCell>Last Name</StyledTableCell>
+                                    <StyledTableCell>Email</StyledTableCell>
+                                    <StyledTableCell>Phone Number</StyledTableCell>
+                                    <StyledTableCell>Address</StyledTableCell>
+                                    <StyledTableCell>Zip</StyledTableCell>
+                                    <StyledTableCell>Service</StyledTableCell>
+                                    <StyledTableCell>Qeustions/Comments</StyledTableCell>
+                                    <StyledTableCell>Budget</StyledTableCell>
+                                    <StyledTableCell>Status</StyledTableCell>
+                                    <StyledTableCell> Edit / Remove</StyledTableCell>
 
-                   
-        </div>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+
+
+
+
+                                {user.isAdmin && pendingAppointments.map((appointment) => {
+                                    return (
+
+
+                                        <StyledTableRow key={appointment.id}>
+                                            <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0, -14))}</StyledTableCell>
+                                            <StyledTableCell>{appointment.first_name}</StyledTableCell>
+                                            <StyledTableCell>{appointment.last_name}</StyledTableCell>
+                                            <StyledTableCell>{appointment.email}</StyledTableCell>
+                                            <StyledTableCell>{appointment.phone_number}</StyledTableCell>
+                                            <StyledTableCell>{appointment.address}</StyledTableCell>
+                                            <StyledTableCell>{appointment.zip}</StyledTableCell>
+                                            <StyledTableCell>{appointment.name}</StyledTableCell>
+                                            <StyledTableCell>{appointment.description}</StyledTableCell>
+                                            <StyledTableCell>{appointment.budget}</StyledTableCell>
+                                            {!user.isAdmin && <StyledTableCell id={appointment.status ? "confirmed" : "pending"}>{appointment.status ? 'confirmed ' : 'pending '}</StyledTableCell>}
+
+                                            {user.isAdmin && <StyledTableCell><Button color="warning" onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </Button></StyledTableCell>}
+                                            <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
+
+                                                <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
+                                                    <DeleteForeverIcon />
+
+                                                </IconButton></StyledTableCell>
+
+                                        </StyledTableRow>
+
+
+                                    )
+
+
+                                })}
+
+
+
+
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+
+
+
+                </div>
+            }
+</div>    
+
+        
     )
     // onClick = {(e) => deleteAppointment(appointment)
 

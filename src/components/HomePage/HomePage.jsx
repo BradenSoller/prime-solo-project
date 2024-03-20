@@ -12,7 +12,6 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
-import Carousel from 'react-bootstrap/Carousel';
 import { useState } from 'react';
 
 
