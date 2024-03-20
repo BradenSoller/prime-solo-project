@@ -23,6 +23,7 @@ float: right;
 
 }
 .ServicesCard{
+   
     width: 250px;
         height: 400px;
         background-color: var(--greenish);
@@ -35,8 +36,8 @@ float: right;
         transition: 90ms ease-in-out;
         margin: 50px;
            position: absolute;
-    right: 140px;
-    bottom: -550px;
+    right: 17.5%;
+    bottom: -136%;
 
 }
 .h2 {
@@ -69,24 +70,24 @@ h2{
 
 .homeImageOne {
     position: absolute;
-        right: 40px;
-        top: 180px;
+        right: 5%;
+        top: 22.3%;
         border: 5px solid;
         padding: 0px;
         padding-bottom: 0px;
-        
 }
 
 
 
 .homeImageTwo {
     position: absolute;
-        left: 105px;
-        bottom: -273px;
+        left: 7.6%;
+        bottom: -34%;
         border: 5px solid;
-       
-      
+        padding: 0px;
+        padding-bottom: 0px;  
 }
+
 
 .homeSchedule {
     width: 315px;

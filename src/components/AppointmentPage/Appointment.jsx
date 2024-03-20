@@ -287,7 +287,7 @@ export default function AppointmentPage({ appointment }) {
             <br />
 
             {user.isAdmin &&
-                <div className="pendingTable">
+                <div className="acceptedTable">
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 700 }} aria-label="customized table">
                             <TableHead>
