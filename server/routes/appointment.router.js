@@ -43,7 +43,7 @@ router.get('/all', (req, res) => {
 
 });
 
-router.get('/:id', (req, res) => {
+router.get('/service/:id', (req, res) => {
   const sqlText = `
   SELECT "appointments"."id", "appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
   "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status", "appointments"."user_id", "appointments"."service_id"
@@ -65,7 +65,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.put('/:id', (req, res) => {
+router.put('/edit/:id', (req, res) => {
   console.log('serviceID:',req.body.service_id);
   // Update this single student
   const idToUpdate = req.params.id;
@@ -179,12 +179,10 @@ router.get('/pending', (req, res) => {
   `
  
   pool.query(getPendingAppointments)
-  pool
-  .query(query)
   .then(result => {
     console.log("results.rows", result.rows);
     res.send(result.rows);
-    console.log();
+   
   })
   .catch((err) => {
     console.log("ERROR: Get all appointments", err);
@@ -194,8 +192,6 @@ router.get('/pending', (req, res) => {
 });
 
 router.get('/accepted', (req, res) => {
-  
-  console.log('running removed events GET')
   const getAcceptedEvents = 
   `
   SELECT * FROM "appointments"
@@ -205,8 +201,8 @@ router.get('/accepted', (req, res) => {
   pool.query(getAcceptedEvents)
   .then((result) => {
     console.log(result.rows, 'results of removed events query')
-    console.log("result rows", result.rows[0]);
-      res.send(result.rows[0])
+    console.log("result rows", result.rows);
+      res.send(result.rows)
       
 
     })

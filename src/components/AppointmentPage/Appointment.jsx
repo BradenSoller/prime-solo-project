@@ -40,14 +40,15 @@ export default function AppointmentPage({ appointment }) {
     const pendingAppointments = useSelector(store => store.newAppointment.pending)
     const acceptedAppointments = useSelector(store => store.newAppointment.approved)
 
+    console.log("new appoinment", Appointments);
+
     console.log("Pending appointments:", pendingAppointments);
     console.log("Accepted appointments:", acceptedAppointments);
 
 
     useEffect(() => {
         dispatch({ type: 'SAGA/GET_APPOINTMENTS' })
-        dispatch({ type: 'SAGA/PENDING_APPOINTMENTS' })
-        dispatch({ type: 'SAGA/ACCEPTED_APPOINTMENTS' })
+
         window.scrollTo(0,0)
     }, [])
 

@@ -4,8 +4,13 @@ import { put, takeLatest } from "redux-saga/effects";
 function* getAppointments() {
   try {
       const response = yield axios.get(`/api/appointment/all`);
-      console.log("response", response);
-      yield put({ type: "GET_APPOINTMENT", payload: response.data });
+    yield put({ type: "GET_APPOINTMENT", payload: response.data });
+    yield put({
+      type: "SAGA/PENDING_APPOINTMENTS",
+    });
+    yield put({
+      type: "SAGA/ACCEPTED_APPOINTMENTS",
+    });
 
   } catch (error) {
     console.log("Error with categories request:", error);
@@ -13,15 +18,17 @@ function* getAppointments() {
 }
 
 function* getPendingAppointments() {
-  console.log("response.data: ", response.data);
   try {
     const response = yield axios({
       method: "GET",
-      url: "/api/appointment/pending",
+      url: "/api/appointment/pending"
     });
+
+const pendingAppoinment = response.data
+
     yield put({
       type: "SET_PENDING",
-      payload: response.data,
+      payload: pendingAppoinment,
    
     });
   } catch (error) {
@@ -31,6 +38,7 @@ function* getPendingAppointments() {
 
 
 function* getAcceptedAppointments() {
+  console.log("booo");
   try {
     const response = yield axios({
       method: "GET",

@@ -28,7 +28,7 @@ function* submitAppointmentEdit(action) {
   
       const response = yield axios({
         method: 'PUT',
-        url: `/api/appointment/${editedAppointment.id}`,
+        url: `/api/appointment/edit/${editedAppointment.id}`,
         data: {
             first_name: editedAppointment.first_name,
             last_name: editedAppointment.last_name,

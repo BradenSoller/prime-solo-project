@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 
 const newAppointment = (state = [], action) => {
+
     switch (action.type) {
         case 'GET_APPOINTMENT':
             return action.payload
@@ -11,12 +12,14 @@ const newAppointment = (state = [], action) => {
 }
 
 const approved = (state = [], action) => {
+
     switch (action.type) {
       case "SET_ACCEPTED":
         return action.payload;
       default:
         return state;
     }
+
   };
   
   const pending = (state = [], action) => {
@@ -33,5 +36,5 @@ const approved = (state = [], action) => {
   export default combineReducers({
     newAppointment,
     approved,
-    pending
+    pending,
   });
