@@ -221,7 +221,7 @@ export default function AppointmentPage({ appointment }) {
                                     <StyledTableCell>Qeustions/Comments</StyledTableCell>
                                     <StyledTableCell>Budget</StyledTableCell>
                                     <StyledTableCell>Status</StyledTableCell>
-                                    <StyledTableCell> Edit / Remove</StyledTableCell>
+                                    <StyledTableCell>Remove</StyledTableCell>
 
                                 </TableRow>
                             </TableHead>
@@ -303,7 +303,7 @@ export default function AppointmentPage({ appointment }) {
                                     <StyledTableCell>Qeustions/Comments</StyledTableCell>
                                     <StyledTableCell>Budget</StyledTableCell>
                                     <StyledTableCell>Status</StyledTableCell>
-                                    <StyledTableCell> Edit / Remove</StyledTableCell>
+                                    <StyledTableCell>Remove</StyledTableCell>
 
                                 </TableRow>
                             </TableHead>
