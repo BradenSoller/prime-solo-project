@@ -7,7 +7,7 @@ function* fetchAppointmentDetails(action) {
         console.log("AppointmentId", AppointmentId);
       const response = yield axios({
         method: 'GET',
-        url: `/api/appointment/${AppointmentId}`
+        url: `/api/appointment/service/${AppointmentId}`
       })
   
         const appointmentToEdit = response.data
