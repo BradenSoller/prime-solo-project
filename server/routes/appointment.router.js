@@ -15,7 +15,7 @@ router.get('/all', (req, res) => {
    ON  "appointments"."service_id" = "services"."id"
   INNER JOIN "user"
   ON "appointments"."user_id" = "user"."id"
-  ORDER BY "appointments"."status" = true`
+  ORDER BY "appointments"."status" = 'pending'`
   }
   else {
     query = `SELECT "appointments"."id","appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
@@ -175,7 +175,7 @@ router.get('/pending', (req, res) => {
   const getPendingAppointments = 
   `
   SELECT * FROM "appointments"
-      WHERE "status" = false;
+      WHERE "status" = 'pending';
   `
  
   pool.query(getPendingAppointments)
@@ -195,7 +195,7 @@ router.get('/accepted', (req, res) => {
   const getAcceptedEvents = 
   `
   SELECT * FROM "appointments"
-      WHERE "status" = true;
+      WHERE "status" = 'approved';
   `
  
   pool.query(getAcceptedEvents)
