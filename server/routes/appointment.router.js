@@ -96,27 +96,8 @@ router.put('/edit/:id', (req, res) => {
       });
 });
 
-router.put('/status/:id', (req, res) => {
-  
- 
-  
-  const sqlText = `
-  UPDATE "appointments"
-   SET "status" = NOT "status"
-   WHERE "id" = ${req.params.id};
-    `
-  
- 
 
-  pool.query(sqlText)
-  .then((dbResult) =>{
-      res.sendStatus(200);
-  })
-  .catch((dbError)=>{
-      console.log('PUT /koalas:id failed', dbError)
-      res.sendStatus(500);
-  })
-});
+
 /**
  * POST route template
  */
