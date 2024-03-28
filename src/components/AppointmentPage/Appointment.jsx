@@ -43,6 +43,7 @@ export default function AppointmentPage({ appointment }) {
     const Appointments = useSelector(store => store.newAppointment.newAppointment)
     const pendingAppointments = useSelector(store => store.newAppointment.pending)
     const acceptedAppointments = useSelector(store => store.newAppointment.approved)
+    const editAppointment = useSelector(store => store.editAppointment)
 
     console.log("new appoinment", Appointments);
 
@@ -62,6 +63,13 @@ export default function AppointmentPage({ appointment }) {
     const [open, setOpen] = useState(false);
 
 
+
+    const handleStatusChange = (status) => {
+        dispatch({
+            type: 'CHANGE_STATUS',
+            payload: status
+        })
+    }
 
     const handleClickOpen = (id) => {
         setAppointmentID(id)
@@ -241,26 +249,27 @@ export default function AppointmentPage({ appointment }) {
                                             <StyledTableCell>{appointment.name}</StyledTableCell>
                                             <StyledTableCell>{appointment.description}</StyledTableCell>
                                             <StyledTableCell>{appointment.budget}</StyledTableCell>
+                                            <StyledTableCell>{appointment.status}</StyledTableCell>
                                             {/* {!user.isAdmin && <StyledTableCell id={appointment.status === 'approved' ? "confirmed" : "pending"}>{appointment.status === 'WIP' ? 'WIP' : 'approved'} {appointment.status === 'complete' ? "complete"  : 'WIP' }</StyledTableCell>} */}
 
                                             {user.isAdmin && <StyledTableCell> 
-                                                <InputLabel id="event-approval-label">Status</InputLabel>
+                                                <InputLabel id="event-approval-label"></InputLabel>
                                                 <Select
                                                     label="Status"
                                                     id="event-approval"
-                                                    // onChange={(e) => handleStatus(e.target.value)}
-                                                    value={appointment.status || ""}
+                                                    onChange={(e) => handleStatusChange(e.target.value)}
+                                                    value={editAppointment.status || ""}
                                                     sx={{ width: 155 }}
                                                 >
                                                     <MenuItem value={"approved"}>Approve</MenuItem>
                                                     <MenuItem value={"WIP"}>WIP</MenuItem>
                                                     <MenuItem value={"pending"}>Pending</MenuItem>
                                                     <MenuItem value={"complete"}>Completed</MenuItem>
-                                                    Apply Changes
+                                              
                                                 </Select>
                                        
                                             </StyledTableCell>}
-                                            <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
+                                            <StyledTableCell><IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>
 
                                                 <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
                                                     <DeleteForeverIcon />
@@ -341,7 +350,24 @@ export default function AppointmentPage({ appointment }) {
                                             <StyledTableCell>{appointment.budget}</StyledTableCell>
                                             {!user.isAdmin && <StyledTableCell id={appointment.status ? "confirmed" : "pending"}>{appointment.status ? 'confirmed ' : 'pending '}</StyledTableCell>}
 
-                                            {user.isAdmin && <StyledTableCell><Button color="warning" onClick={(e) => handleStatus(appointment)}>{appointment.status ? 'confirmed' : 'pending'}  </Button></StyledTableCell>}
+
+                                            {user.isAdmin && <StyledTableCell>
+                                                <InputLabel id="event-approval-label"></InputLabel>
+                                                <Select
+                                                    label="Status"
+                                                    id="event-approval"
+                                                    onChange={(e) => handleStatusChange(e.target.value)}
+                                                    value={editAppointment.status || ""}
+                                                    sx={{ width: 155 }}
+                                                >
+                                                    <MenuItem value={"approved"}>Approve</MenuItem>
+                                                    <MenuItem value={"WIP"}>WIP</MenuItem>
+                                                    <MenuItem value={"pending"}>Pending</MenuItem>
+                                                    <MenuItem value={"complete"}>Complete</MenuItem>
+                                                    Apply Changes
+                                                </Select>
+
+                                            </StyledTableCell>}
                                             <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
 
                                                 <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >

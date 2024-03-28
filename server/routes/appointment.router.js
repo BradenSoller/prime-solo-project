@@ -43,27 +43,46 @@ router.get('/all', (req, res) => {
 
 });
 
-router.get('/service/:id', (req, res) => {
-  const sqlText = `
-  SELECT "appointments"."id", "appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
-  "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status", "appointments"."user_id", "appointments"."service_id"
-  FROM "appointments"
-  INNER JOIN "services"
-   ON  "appointments"."service_id" = "services"."id"
-        WHERE "appointments"."id" = $1;
-  `
-  const sqlValues = [req.params.id]
+// router.get('/service/:id', (req, res) => {
+//   const sqlText = `
+//   SELECT "appointments"."id", "appointments"."time_completed","appointments"."first_name", "services"."name","appointments"."last_name", 
+//   "appointments"."email", "appointments"."phone_number", "appointments"."address", "appointments"."zip", "appointments"."description", "appointments"."budget", "appointments"."status", "appointments"."user_id", "appointments"."service_id"
+//   FROM "appointments"
+//   INNER JOIN "services"
+//    ON  "appointments"."service_id" = "services"."id"
+//         WHERE "appointments"."id" = $1;
+//   `
+//   const sqlValues = [req.params.id]
 
-  pool.query(sqlText, sqlValues)
-    .then((dbRes) => {
-      const appointmentDetails = dbRes.rows[0]
-      res.send(appointmentDetails)
-    })
-    .catch((dbErr) => {
-      console.log('GET /appointments/:id fail:', dbErr)
-      res.sendStatus(500)
-    })
-})
+//   pool.query(sqlText, sqlValues)
+//     .then((dbRes) => {
+//       const appointmentDetails = dbRes.rows[0]
+//       res.send(appointmentDetails)
+//     })
+//     .catch((dbErr) => {
+//       console.log('GET /appointments/:id fail:', dbErr)
+//       res.sendStatus(500)
+//     })
+// })
+
+router.get('/update/:id', (req, res) => {
+  const getSelectedAppointment = 
+  `
+  SELECT * FROM "appointments"
+      WHERE "id" = $1
+  `;
+ const AppointmentID = [req.params.id];
+
+pool
+  .query(getSelectedAppointment, AppointmentID)
+  .then((result) => {
+    res.send(result.rows[0]);
+  })
+  .catch((err) => {
+    console.log("GET /api/eventfeed fail:", err);
+    res.sendStatus(500);
+  });
+});
 
 router.put('/edit/:id', (req, res) => {
   console.log('serviceID:',req.body.service_id);
@@ -95,6 +114,8 @@ router.put('/edit/:id', (req, res) => {
           res.sendStatus(500);
       });
 });
+
+
 
 
 

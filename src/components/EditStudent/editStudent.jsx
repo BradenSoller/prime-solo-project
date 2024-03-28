@@ -5,6 +5,9 @@ import { Button } from '@mui/material'
 import TextField from '@mui/material/TextField';
 import AppointmentPage from '../AppointmentPage/Appointment';
 import "./editStudent.css"
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import { IconButton, MenuItem } from "@mui/material"
 
 
 
@@ -80,12 +83,13 @@ console.log("editAppointment", editAppointment);
             payload: budget
         })
     }
-    // const handleStatus = (status) => {
-    //     dispatch({
-    //         type: 'CHANGE_STATUS',
-    //         payload: status
-    //     })
-    // }
+
+    const handleStatusChange = (status) => {
+        dispatch({
+            type: 'CHANGE_STATUS',
+            payload: status
+        })
+    }
    
 
     const applyEdits = (e) => {
@@ -197,6 +201,20 @@ console.log("editAppointment", editAppointment);
                 />
                 <br />
                 <br />
+                <InputLabel id="event-approval-label"></InputLabel>
+                <Select
+                    label="Status"
+                    id="event-approval"
+                    onChange={(e) => handleStatusChange(e.target.value)}
+                    value={editAppointment.status || ""}
+                    sx={{ width: 155 }}
+                >
+                    <MenuItem value={"approved"}>Approve</MenuItem>
+                    <MenuItem value={"WIP"}>WIP</MenuItem>
+                    <MenuItem value={"pending"}>Pending</MenuItem>
+                    <MenuItem value={"complete"}>Completed</MenuItem>
+
+                </Select>
                 
             
                 <Button variant='contained' color='warning' type='onSubmit' onClick={applyEdits}>Submit</Button>
