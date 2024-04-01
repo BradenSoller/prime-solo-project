@@ -193,6 +193,47 @@ router.get('/pending', (req, res) => {
 
 });
 
+router.get('/WIP', (req, res) => {
+  const getPendingAppointments = 
+  `
+  SELECT * FROM "appointments"
+      WHERE "status" = 'WIP';
+  `
+ 
+  pool.query(getPendingAppointments)
+  .then(result => {
+    console.log("results.rows", result.rows);
+    res.send(result.rows);
+   
+  })
+  .catch((err) => {
+    console.log("ERROR: Get all appointments", err);
+    res.sendStatus(500);
+  });
+
+});
+
+router.get('/complete', (req, res) => {
+  const getPendingAppointments = 
+  `
+  SELECT * FROM "appointments"
+      WHERE "status" = 'complete';
+  `
+ 
+  pool.query(getPendingAppointments)
+  .then(result => {
+    console.log("results.rows", result.rows);
+    res.send(result.rows);
+   
+  })
+  .catch((err) => {
+    console.log("ERROR: Get all appointments", err);
+    res.sendStatus(500);
+  });
+
+});
+
+
 router.get('/accepted', (req, res) => {
   const getAcceptedEvents = 
   `

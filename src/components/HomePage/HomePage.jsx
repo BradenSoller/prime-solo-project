@@ -170,7 +170,6 @@ history.push('/schedule')
           width={550}
           height={400}
           images={HomeImages}
-          showNavs={true}
         />
       <div className='ServicesCard'> 
       <div className='services'>
