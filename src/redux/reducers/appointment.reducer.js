@@ -31,7 +31,7 @@ const approved = (state = [], action) => {
     }
   };
 
-  const WIP = (state = [], action) => {
+  const workIP = (state = [], action) => {
     switch (action.type) {
       case "SET_WIP":
         return action.payload;
@@ -55,6 +55,6 @@ const approved = (state = [], action) => {
     newAppointment,
     approved,
     pending,
-    WIP,
+    workIP,
     complete
   });

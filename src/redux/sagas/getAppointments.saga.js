@@ -11,6 +11,12 @@ function* getAppointments() {
     yield put({
       type: "SAGA/ACCEPTED_APPOINTMENTS",
     });
+    yield put({
+      type: "SAGA/WIP_APPOINTMENTS",
+    });
+    yield put({
+      type: "SAGA/COMPLETE_APPOINTMENTS",
+    });
 
   } catch (error) {
     console.log("Error with categories request:", error);
