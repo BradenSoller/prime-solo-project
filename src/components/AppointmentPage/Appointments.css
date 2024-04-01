@@ -30,12 +30,22 @@ thead {
     
 }
 
-#confirmed{
-    color: rgb(5, 177, 11);
+#complete{
+    color: rgb(2, 39, 246);
     font-size: larger;
 }
 
 #pending {
     font-size: larger;
     color: orange
+}
+
+#approved {
+    color: rgb(127, 212, 0);
+    font-size: larger;
+}
+
+#WIP {
+    color: rgb(255, 0, 0);
+        font-size: larger;
 }

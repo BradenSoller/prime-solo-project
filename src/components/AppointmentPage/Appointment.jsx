@@ -158,7 +158,7 @@ export default function AppointmentPage({ appointment }) {
                                         <StyledTableCell>{appointment.name}</StyledTableCell>
                                         <StyledTableCell>{appointment.description}</StyledTableCell>
                                         <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                        <StyledTableCell>{appointment.status}</StyledTableCell>
+                                        <StyledTableCell id={appointment.status === "complete" ? "complete" : null}>{appointment.status}</StyledTableCell>
 
 
               
@@ -254,7 +254,7 @@ export default function AppointmentPage({ appointment }) {
                                             <StyledTableCell>{appointment.name}</StyledTableCell>
                                             <StyledTableCell>{appointment.description}</StyledTableCell>
                                             <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                            <StyledTableCell>{appointment.status}</StyledTableCell>
+                                            <StyledTableCell id={appointment.status === "pending" ? "pending" : null}>{appointment.status}</StyledTableCell>
                                             {/* {!user.isAdmin && <StyledTableCell id={appointment.status === 'approved' ? "confirmed" : "pending"}>{appointment.status === 'WIP' ? 'WIP' : 'approved'} {appointment.status === 'complete' ? "complete"  : 'WIP' }</StyledTableCell>} */}
                                             <StyledTableCell><IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>
 
@@ -335,7 +335,7 @@ export default function AppointmentPage({ appointment }) {
                                             <StyledTableCell>{appointment.name}</StyledTableCell>
                                             <StyledTableCell>{appointment.description}</StyledTableCell>
                                             <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                            <StyledTableCell>{appointment.status}</StyledTableCell>
+                                            <StyledTableCell id={appointment.status === "approved" ? "approved" : null}>{appointment.status}</StyledTableCell>
                                             <StyledTableCell><IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>
 
                                                 <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
@@ -416,7 +416,7 @@ export default function AppointmentPage({ appointment }) {
                                             <StyledTableCell>{appointment.name}</StyledTableCell>
                                             <StyledTableCell>{appointment.description}</StyledTableCell>
                                             <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                            <StyledTableCell>{appointment.status}</StyledTableCell>
+                                            <StyledTableCell id={appointment.status === "WIP" ? "WIP" : null}>{appointment.status}</StyledTableCell>
                                             <StyledTableCell><IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>
 
                                                 <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
@@ -497,7 +497,7 @@ export default function AppointmentPage({ appointment }) {
                                             <StyledTableCell>{appointment.name}</StyledTableCell>
                                             <StyledTableCell>{appointment.description}</StyledTableCell>
                                             <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                            <StyledTableCell>{appointment.status}</StyledTableCell>
+                                            <StyledTableCell id={appointment.status === "complete" ? "complete" : null}>{appointment.status}</StyledTableCell>
                                             <StyledTableCell><IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>
 
                                                 <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
