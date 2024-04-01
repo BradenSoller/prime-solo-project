@@ -53,10 +53,46 @@ function* getAcceptedAppointments() {
   }
 }
 
+function* getWIPAppointments() {
+  console.log("booo");
+  try {
+    const response = yield axios({
+      method: "GET",
+      url: "/api/appointment/WIP",
+    });
+    yield put({
+      type: "SET_WIP",
+      payload: response.data,
+    });
+  } catch (error) {
+    console.log("Unable to get removed events from server", error);
+  }
+}
+
+function* getCompleteAppointments() {
+  console.log("booo");
+  try {
+    const response = yield axios({
+      method: "GET",
+      url: "/api/appointment/complete",
+    });
+    yield put({
+      type: "SET_COMPLETE",
+      payload: response.data,
+    });
+  } catch (error) {
+    console.log("Unable to get removed events from server", error);
+  }
+}
+
 function* getAppointmentSaga() {
   yield takeLatest("SAGA/GET_APPOINTMENTS", getAppointments);
-  yield takeLatest("SAGA/PENDING_APPOINTMENTS", getPendingAppointments)
-  yield takeLatest("SAGA/ACCEPTED_APPOINTMENTS", getAcceptedAppointments)
+  yield takeLatest("SAGA/PENDING_APPOINTMENTS", getPendingAppointments);
+  yield takeLatest("SAGA/ACCEPTED_APPOINTMENTS", getAcceptedAppointments);
+  yield takeLatest("SAGA/WIP_APPOINTMENTS", getWIPAppointments);
+  yield takeLatest("SAGA/COMPLETE_APPOINTMENTS", getCompleteAppointments);
+
+
 }
 
 export default getAppointmentSaga;
