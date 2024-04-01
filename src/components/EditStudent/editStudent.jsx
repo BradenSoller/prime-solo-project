@@ -18,6 +18,7 @@ export default function EditAppointmentPage() {
     const dispatch = useDispatch()
     const history = useHistory()
     const editAppointment = useSelector(store => store.editAppointment)
+    const user = useSelector(store => store.user)
 
 
     
@@ -202,7 +203,7 @@ console.log("editAppointment", editAppointment);
                 <br />
                 <br />
                 <InputLabel id="event-approval-label"></InputLabel>
-                <Select
+              { user.isAdmin &&  <Select
                     label="Status"
                     id="event-approval"
                     onChange={(e) => handleStatusChange(e.target.value)}
@@ -215,7 +216,7 @@ console.log("editAppointment", editAppointment);
                     <MenuItem value={"complete"}>Completed</MenuItem>
 
                 </Select>
-                
+                }
             
                 <Button variant='contained' color='warning' type='onSubmit' onClick={applyEdits}>Submit</Button>
             </form>
