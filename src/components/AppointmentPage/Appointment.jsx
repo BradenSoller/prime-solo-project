@@ -156,6 +156,9 @@ export default function AppointmentPage({ appointment }) {
                                         <StyledTableCell>{appointment.name}</StyledTableCell>
                                         <StyledTableCell>{appointment.description}</StyledTableCell>
                                         <StyledTableCell>{appointment.budget}</StyledTableCell>
+                                        <StyledTableCell>{appointment.status}</StyledTableCell>
+
+
               
 
                         
