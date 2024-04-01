@@ -30,6 +30,24 @@ const approved = (state = [], action) => {
         return state;
     }
   };
+
+  const WIP = (state = [], action) => {
+    switch (action.type) {
+      case "SET_WIP":
+        return action.payload;
+      default:
+        return state;
+    }
+  };
+
+  const complete = (state = [], action) => {
+    switch (action.type) {
+      case "SET_COMPLETE":
+        return action.payload;
+      default:
+        return state;
+    }
+  };
   
 
 
@@ -37,4 +55,6 @@ const approved = (state = [], action) => {
     newAppointment,
     approved,
     pending,
+    WIP,
+    complete
   });
