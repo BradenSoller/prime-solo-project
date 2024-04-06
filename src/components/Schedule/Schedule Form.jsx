@@ -233,7 +233,7 @@ export default function ScheduleForm({ appointment }) {
             </form>
             
 
-            </div> : <div> <h1>Log In !</h1> </div> }
+            </div> : <div className="LogInScheduleCard"> <h3>To schedule an appointment </h3> </div> }
             
     </div>
     )
