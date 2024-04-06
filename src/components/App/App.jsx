@@ -84,13 +84,13 @@ function App() {
             <HomePage />
           </Route>
 
-          <ProtectedRoute
+          <Route
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/services"
           >
             <ServicePage/>
-          </ProtectedRoute>
+          </Route>
 
           <Route
             exact
