@@ -42,6 +42,8 @@ export default function ScheduleForm({ appointment }) {
     const [description, setDescription] = useState('');
     const [budget, setBudget] = useState('');
 
+    const user = useSelector((store) => store.user);
+
     const [service, setService] = useState('');
     console.log('service', service);
 
@@ -97,12 +99,14 @@ export default function ScheduleForm({ appointment }) {
         setBudget('$1,000')
 
         setService('Deck Staining')
-}
+    }
 
     return (
-        
+
         <div>
-            <div className="scheduleHeading">
+        { user.id ? < div >
+    
+             <div className="scheduleHeading">
             <h2 onClick={FillOutFormData}>Schedule</h2>
             </div>
             <form onSubmit={handleClickOpen}>
@@ -227,7 +231,11 @@ export default function ScheduleForm({ appointment }) {
                 <Button variant="contained" color="warning" type="onSubmit">submit</Button>
 
             </form>
-        </div>
+            
+
+            </div> : <div> <h1>Log In !</h1> </div> }
+            
+    </div>
     )
 
 
