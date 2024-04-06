@@ -55,7 +55,9 @@ body {
     text-decoration: underline;
 }
 .LogInScheduleCard{
-        width: 250px;
+    padding-left: 100px;
+    padding-right: 50px;
+        width: 550px;
         height: 60px;
         background-color: var(--greenish);
         font-family: var(--srcsansreg);
@@ -68,5 +70,25 @@ body {
         margin: 50px;
         position: absolute;
         top: 40%;
-        left: 15%;
+        left: 23%;
+        
+}
+
+
+.registerButtonSchedule{
+position: absolute;
+top: 23% ;
+left: 51%
+}
+
+.logInButtonSchedule{
+position: absolute;
+top: 23%;
+left: 67%
+}
+
+.orH3{
+    position: absolute;
+        top: -10%;
+        left: 67%
 }

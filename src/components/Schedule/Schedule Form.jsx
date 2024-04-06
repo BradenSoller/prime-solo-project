@@ -12,6 +12,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 
+
 export default function ScheduleForm({ appointment }) {
 
     const history = useHistory()
@@ -104,138 +105,165 @@ export default function ScheduleForm({ appointment }) {
     return (
 
         <div>
-        { user.id ? < div >
-    
-             <div className="scheduleHeading">
-            <h2 onClick={FillOutFormData}>Schedule</h2>
-            </div>
-            <form onSubmit={handleClickOpen}>
-            <Fragment>
-                <Dialog
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
-                >
-                    <DialogTitle id="alert-dialog-title">
-                            {"  Are you sure you wanna submit ?"}
-                    </DialogTitle>
-                    <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
-                  your appointment will be looked at as soon as possible.
-                        </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleClose}>close</Button>
-                        <Button onClick={newAppointment} autoFocus>
-                            Submit
+            {user.id ? < div >
+
+                <div className="scheduleHeading">
+                    <h2 onClick={FillOutFormData}>Schedule</h2>
+                </div>
+                <form onSubmit={handleClickOpen}>
+                    <Fragment>
+                        <Dialog
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                        >
+                            <DialogTitle id="alert-dialog-title">
+                                {"  Are you sure you wanna submit ?"}
+                            </DialogTitle>
+                            <DialogContent>
+                                <DialogContentText id="alert-dialog-description">
+                                    your appointment will be looked at as soon as possible.
+                                </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={handleClose}>close</Button>
+                                <Button onClick={newAppointment} autoFocus>
+                                    Submit
+                                </Button>
+                            </DialogActions>
+                        </Dialog>
+                    </Fragment>
+
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="First Name"
+                        type="text"
+                        value={firstName}
+                        onChange={(event) => setFirstName(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="Last Name"
+                        type="text"
+                        value={lastName}
+                        onChange={(event) => setLastName(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="Email"
+                        type="text"
+                        value={email}
+
+                        onChange={(event) => setEmail(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="Phone Number"
+                        type="text"
+                        value={phoneNumber}
+                        onChange={(event) => setPhoneNumber(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="Address"
+                        type="text"
+                        value={address}
+                        onChange={(event) => setAddress(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="Zip"
+                        type="text"
+                        value={zip}
+                        onChange={(event) => setZip(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <select className="servicesForm" value={service} required onChange={(e) => setService(e.target.value)}>
+                        <option value={0}>select</option>
+                        <option value={1}>Rock Removal</option>
+                        <option value={2}>Deck Staining</option>
+                        <option value={3}>Weeding</option>
+                        <option value={4}>Tree/Bush Triming </option>
+                        <option value={5}>Brush/Junk Removal</option>
+                        <option value={6}>Mulching</option>
+
+                    </select>
+                    <br />
+                    <br />
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="Description"
+                        type="text"
+                        value={description}
+                        onChange={(event) => setDescription(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                        className="input"
+                        id="outlined-controlled"
+                        label="Budget"
+                        type="text"
+                        value={budget}
+
+                        onChange={(event) => setBudget(event.target.value)}
+                    />
+                    <br />
+                    <br />
+                    <Button variant="contained" color="warning" type="onSubmit">submit</Button>
+
+                </form>
+
+
+            </div> : <div className="LogInScheduleCard">
+                <h3>To schedule an appointment
+                    <div className="registerButtonSchedule">
+                        <Button
+                            type="button"
+                            onClick={() => {
+                                history.push('/registration');
+                            }}
+                        >
+                            Register
                         </Button>
-                    </DialogActions>
-                </Dialog>
-                </Fragment>
-                
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="First Name"
-                    type="text"
-                    value={firstName}
-                    onChange={(event) => setFirstName(event.target.value)}
-                />
-                <br />
-                <br />
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="Last Name"
-                    type="text"
-                    value={lastName}
-                    onChange={(event) => setLastName(event.target.value)}
-                />
-                <br />
-                <br />
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="Email"
-                    type="text"
-                    value={email}
+                        </div>
+                        <div className="orH3">
+                           <h3> or </h3>
+                        </div>
+                    <div className="logInButtonSchedule">
+                        <Button
+                                type="button"
+                                
+                            onClick={() => {
+                                history.push('/login');
+                            }}
+                        >
+                            Login
+                        </Button>
+                    </div>
+                </h3>
+            </div>}
 
-                    onChange={(event) => setEmail(event.target.value)}
-                />
-                <br />
-                <br />
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="Phone Number"
-                    type="text"
-                    value={phoneNumber}
-                    onChange={(event) => setPhoneNumber(event.target.value)}
-                />
-                <br />
-                <br />
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="Address"
-                    type="text"
-                    value={address}
-                    onChange={(event) => setAddress(event.target.value)}
-                />
-                <br />
-                <br />
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="Zip"
-                    type="text"
-                    value={zip}
-                    onChange={(event) => setZip(event.target.value)}
-                />
-                <br />
-                <br />
-                <select className="servicesForm" value={service} required onChange={(e) => setService(e.target.value)}>
-                    <option value={0}>select</option>
-                    <option value={1}>Rock Removal</option>
-                    <option value={2}>Deck Staining</option>
-                    <option value={3}>Weeding</option>
-                    <option value={4}>Tree/Bush Triming </option>
-                    <option value={5}>Brush/Junk Removal</option>
-                    <option value={6}>Mulching</option>
-    
-                </select>
-                <br />
-                <br />
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="Description"
-                    type="text"
-                    value={description}
-                    onChange={(event) => setDescription(event.target.value)}
-                />
-                <br />
-                <br />
-                <TextField
-                    className="input"
-                    id="outlined-controlled"
-                    label="Budget"
-                    type="text"
-                    value={budget}
-
-                    onChange={(event) => setBudget(event.target.value)}
-                />
-                <br />
-                <br />
-                <Button variant="contained" color="warning" type="onSubmit">submit</Button>
-
-            </form>
-            
-
-            </div> : <div className="LogInScheduleCard"> <h3>To schedule an appointment </h3> </div> }
-            
-    </div>
+        </div>
     )
 
 
