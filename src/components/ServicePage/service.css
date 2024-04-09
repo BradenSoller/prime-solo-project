@@ -10,13 +10,11 @@
 }
 
 .ScheduleService{
-    float: right;
-    float: right;
+ 
         position: absolute;
-        right: 165px;
-        top: 467px;
-        white-space: nowrap;
-            text-align: center;
+        left: 1080px;
+        top: 480px;
+  
        width: 200px;
        height: 33px;
        
@@ -24,13 +22,10 @@
 }
 
 .DeckButton {
-    float: right;
-    float: right;
+ 
     position: absolute;
-    right: -40px;
-    top: 1000px;
-    white-space: nowrap;
-    text-align: center;
+    left: 880px;
+    top: 1020px;
     width: 200px;
     height: 33px;
 
