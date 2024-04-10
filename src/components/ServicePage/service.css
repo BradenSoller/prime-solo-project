@@ -70,13 +70,9 @@
 }
 
 .RockButton{
-    float: right;
-        float: right;
         position: absolute;
-        right: -240px;
-        bottom: -1532px;
-        white-space: nowrap;
-        text-align: center;
+        left: 677px;
+        bottom: -1550px;
         width: 200px;
         height: 33px;
       
