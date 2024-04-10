@@ -93,13 +93,9 @@
 }
 
 .BrushButton{
-    float: right;
-        float: right;
         position: absolute;
-        right: 165px;
+        left: 1080px;
         bottom: -2030px;
-        white-space: nowrap;
-        text-align: center;
         width: 200px;
         height: 33px;
 }
@@ -121,25 +117,17 @@ float: right;
 }
 
 .WeedingButton {
-float: right;
-    float: right;
     position: absolute;
-    right: 165px;
-    bottom: -3005px;
-    white-space: nowrap;
-    text-align: center;
+    left: 1080px;
+    bottom: -2982px;
     width: 200px;
     height: 33px;
 }
 
 .TrimmingButton {
-float: right;
-    float: right;
     position: absolute;
-    right: 165px;
-    bottom: -2515px;
-    white-space: nowrap;
-    text-align: center;
+    left: 1080px;
+    bottom: -2505px;
     width: 200px;
     height: 33px;
 }
