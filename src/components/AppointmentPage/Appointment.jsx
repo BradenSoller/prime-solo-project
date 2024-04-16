@@ -56,7 +56,7 @@ export default function AppointmentPage({ appointment }) {
     useEffect(() => {
         dispatch({ type: 'SAGA/GET_APPOINTMENTS' })
 
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     }, [])
 
     const user = useSelector(store => store.user)
@@ -119,7 +119,7 @@ export default function AppointmentPage({ appointment }) {
 
 
     return (
-<div>
+        <div>
             {user.id ? <div>
                 {!user.isAdmin &&
                     <TableContainer component={Paper}>
@@ -145,8 +145,8 @@ export default function AppointmentPage({ appointment }) {
 
                                 {Appointments.map((appointment) => {
                                     return (
-                                
-        
+
+
                                         <StyledTableRow key={appointment.id}>
                                             <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0, -14))}</StyledTableCell>
                                             <StyledTableCell>{appointment.first_name}</StyledTableCell>
@@ -158,12 +158,12 @@ export default function AppointmentPage({ appointment }) {
                                             <StyledTableCell>{appointment.name}</StyledTableCell>
                                             <StyledTableCell>{appointment.description}</StyledTableCell>
                                             <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                            <StyledTableCell id={appointment.status === "complete" ? "complete" : null}>{appointment.status}</StyledTableCell>
+                                            <StyledTableCell id={appointment.status === "complete" ? "complete" : appointment.status === "pending" ? "pending" : appointment.status === "approved" ? "approved" : appointment.status === "WIP" ? "WIP" : null}>{appointment.status}</StyledTableCell>
 
 
-              
 
-                        
+
+
                                             <StyledTableCell>{user.isAdmin === false && <IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>}
 
                                                 <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
@@ -173,7 +173,7 @@ export default function AppointmentPage({ appointment }) {
 
                                         </StyledTableRow>
 
-                                
+
                                     )
 
 
@@ -235,10 +235,10 @@ export default function AppointmentPage({ appointment }) {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                           
 
-          
-                        
+
+
+
                                     {user.isAdmin && pendingAppointments.map((appointment) => {
                                         return (
 
@@ -278,8 +278,8 @@ export default function AppointmentPage({ appointment }) {
                             </Table>
                         </TableContainer>
 
-           
-          
+
+
                     </div>
                 }
                 <br />
@@ -416,7 +416,7 @@ export default function AppointmentPage({ appointment }) {
                                                 <StyledTableCell>{appointment.name}</StyledTableCell>
                                                 <StyledTableCell>{appointment.description}</StyledTableCell>
                                                 <StyledTableCell>{appointment.budget}</StyledTableCell>
-                                                <StyledTableCell id={appointment.status === "WIP" ? "WIP" : null}>{appointment.status}</StyledTableCell>
+                                                <StyledTableCell className="WIPtext" id={appointment.status === "WIP" ? "WIP" : null}>{appointment.status}</StyledTableCell>
                                                 <StyledTableCell><IconButton onClick={() => { history.push(`/edit_appointment/${appointment.id}`) }}><EditIcon /></IconButton>
 
                                                     <IconButton aria-label="delete" onClick={() => handleClickOpen(appointment.id)} >
@@ -523,7 +523,7 @@ export default function AppointmentPage({ appointment }) {
 
 
                     </div>
-                    
+
                 }
             </div> : <div className="LogInScheduleCard">
                 <h3>To view your appointments
@@ -553,10 +553,10 @@ export default function AppointmentPage({ appointment }) {
                     </div>
                 </h3>
             </div>}
-                    
-             
+
+
         </div>
-        
+
     )
     // onClick = {(e) => deleteAppointment(appointment)
 
