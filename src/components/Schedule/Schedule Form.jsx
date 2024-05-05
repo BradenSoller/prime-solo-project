@@ -104,7 +104,7 @@ export default function ScheduleForm({ appointment }) {
 
     return (
 
-        <div>
+        <div className="ScheduleCard">
             {user.id ? < div >
 
                 <div className="scheduleHeading">
@@ -135,6 +135,7 @@ export default function ScheduleForm({ appointment }) {
                         </Dialog>
                     </Fragment>
 
+                    <div className="DataInput">
                     <TextField
                         className="input"
                         id="outlined-controlled"
@@ -226,10 +227,11 @@ export default function ScheduleForm({ appointment }) {
                         value={budget}
 
                         onChange={(event) => setBudget(event.target.value)}
-                    />
+                        />
+                    </div>
                     <br />
                     <br />
-                    <Button variant="contained" color="warning" type="onSubmit">submit</Button>
+                    <Button className="submitButton" variant="contained" color="warning" type="onSubmit">submit</Button>
 
                 </form>
 
