@@ -3,11 +3,13 @@
     position: absolute; right: 10px;
         top: 165px;
         border: 5px solid;
+          transition: 90ms ease-in-out;
 }
 
-.container{
-
+.MulchSlider:hover {
+    transform: scale(1.03);
 }
+
 
 .ScheduleService{
  
@@ -38,7 +40,12 @@
     right: 10px;
     top: 700px;
     border: 5px solid;
+     transition: 90ms ease-in-out;
 }
+.DeckSlider:hover {
+    transform: scale(1.03);
+}
+
 .MulchText{
   
         position: absolute;
@@ -61,7 +68,13 @@
             right: 10px;
             bottom: -830px;
             border: 5px solid;
+             transition: 90ms ease-in-out;
 }
+
+.RockSlider:hover {
+    transform: scale(1.03);
+}
+
 
 .RockText{
     position: absolute;
@@ -69,14 +82,16 @@
         top: 15%;
 }
 
+
 .RockButton{
         position: absolute;
         left: 677px;
         bottom: -1550px;
         width: 200px;
-        height: 33px;
-      
+        height: 33px;    
 }
+
+
 
 .BrushSlider{
     float: right;
@@ -84,13 +99,22 @@
         right: 10px;
         bottom: -1365px;
         border: 5px solid;
-
+         transition: 90ms ease-in-out;
 }
+
+
+
+.BrushSlider:hover {
+    transform: scale(1.03);
+}
+
+
 .BrushText {
     position: absolute;
     left: 6%;
     top: 20%;
 }
+
 
 .BrushButton{
         position: absolute;
@@ -100,13 +124,21 @@
         height: 33px;
 }
 
+
 .TrimmingSlider {
 float: right;
     position: absolute;
     right: 10px;
     bottom: -1890px;
     border: 5px solid;
+     transition: 90ms ease-in-out;
 }
+
+
+.TrimmingSlider:hover {
+    transform: scale(1.03);
+}
+
 
 .WeedingSlider {
 float: right;
@@ -114,7 +146,14 @@ float: right;
     right: 10px;
     bottom: -2420px;
     border: 5px solid;
+     transition: 90ms ease-in-out;
 }
+
+
+.WeedingSlider:hover {
+    transform: scale(1.03);
+}
+
 
 .WeedingButton {
     position: absolute;
