@@ -525,7 +525,7 @@ export default function AppointmentPage({ appointment }) {
                     </div>
 
                 }
-            </div> : <div className="LogInScheduleCard">
+            </div> : <div className="LogInAppointmentCard">
                 <h3>To view your appointments
                     <div className="registerButtonSchedule">
                         <Button
