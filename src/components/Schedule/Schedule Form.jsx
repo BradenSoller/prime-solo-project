@@ -10,7 +10,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useFormControl } from '@mui/material/FormControl';
+import FormControl, { useFormControl } from '@mui/material/FormControl';
+
+
+
 
 
 
@@ -137,21 +140,28 @@ export default function ScheduleForm({ appointment }) {
                     </Fragment>
 
                     <div className="DataInput">
+                        
+                    
+                           
                     <TextField
                         className="input"
                         id="outlined-controlled"
                         label="First Name"
-                        type="text"
+                                type="text"
+                                required
                         value={firstName}
-                        onChange={(event) => setFirstName(event.target.value)}
+                            onChange={(event) => setFirstName(event.target.value)}
+
                     />
+                        
                     <br />
                     <br />
                     <TextField
                         className="input"
                         id="outlined-controlled"
                         label="Last Name"
-                        type="text"
+                            type="text"
+                            required
                         value={lastName}
                         onChange={(event) => setLastName(event.target.value)}
                     />
@@ -173,7 +183,8 @@ export default function ScheduleForm({ appointment }) {
                         id="outlined-controlled"
                         label="Phone Number"
                         type="text"
-                        value={phoneNumber}
+                            value={phoneNumber}
+                            required
                         onChange={(event) => setPhoneNumber(event.target.value)}
                     />
                     <br />
@@ -183,7 +194,8 @@ export default function ScheduleForm({ appointment }) {
                         id="outlined-controlled"
                         label="Address"
                         type="text"
-                        value={address}
+                            value={address}
+                            required
                         onChange={(event) => setAddress(event.target.value)}
                     />
                     <br />
@@ -193,7 +205,8 @@ export default function ScheduleForm({ appointment }) {
                         id="outlined-controlled"
                         label="Zip"
                         type="text"
-                        value={zip}
+                            value={zip}
+                            required
                         onChange={(event) => setZip(event.target.value)}
                     />
                     <br />
