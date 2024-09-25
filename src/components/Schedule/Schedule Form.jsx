@@ -10,6 +10,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useFormControl } from '@mui/material/FormControl';
 
 
 
@@ -205,6 +206,7 @@ export default function ScheduleForm({ appointment }) {
                         <option value={4}>Tree/Bush Triming </option>
                         <option value={5}>Brush/Junk Removal</option>
                         <option value={6}>Mulching</option>
+                        <option value={7}>Snow Removal</option>
 
                     </select>
                     <br />
