@@ -3,13 +3,27 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Button } from '@mui/material';
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
+  let history = useHistory()
+
+
+
+ 
+
   return (
     <div className="nav">
-      <img height={93} src="/yb-logo.jpg"/>
+      <Button
+        type='button'
+        onClick={() => {
+          history.push('/login');
+        }}>
+        <img height={93} src="/yb-logo.jpg" />
+      </Button>
       <Link to="/home">
         <h2 className="nav-title"></h2>
       </Link>
