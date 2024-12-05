@@ -25,7 +25,7 @@
   display: inline-block;
   color: #f2f2f2;
   background-color: #ff6308;
-  text-align: center;
+  text-align: bottom;
   padding: 24px 10px;
   text-decoration: none;
   font-size: 15px;
@@ -39,5 +39,16 @@
 }
 
 .navLink:hover {
+  background-color: #b57a04;
+}
+
+.navHome{
+position: absolute;
+top:65px;
+left:850px;
+    color: #f2f2f2;
+}
+
+.navHome:hover {
   background-color: #b57a04;
 }
