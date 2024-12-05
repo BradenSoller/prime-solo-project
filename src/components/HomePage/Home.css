@@ -173,3 +173,9 @@ width: 600px;
 .ServicesCard:hover {
     transform: scale(1.03);
 }
+
+.dropDownMenu {
+position: absolute;
+top: 10%;
+right: 2%
+}

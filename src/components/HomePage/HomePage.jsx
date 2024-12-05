@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
 import { useState } from 'react';
+import { DropDownProfile } from '../DropDown/DropDownProfile';
 
 
 
@@ -193,7 +194,10 @@ history.push('/schedule')
         <Link href="mailto:youngbuckservices@gmail.com">youngbuckservices@gmail.com</Link>
 
       </div>
-    </div>
+      </div>
+      <div className='dropDownMenu'>
+        <DropDownProfile />
+      </div>
 </div>
   
    
