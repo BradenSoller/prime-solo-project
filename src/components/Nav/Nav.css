@@ -52,3 +52,15 @@ left:850px;
 .navHome:hover {
   background-color: #b57a04;
 }
+
+.navLogOut{
+    background-color: #ff6308;
+    outline: 0;
+      font-size: 15px;
+      border: none;
+      position: absolute;
+     left: 1250px;
+     top:60px
+
+      
+}
