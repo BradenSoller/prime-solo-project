@@ -67,11 +67,11 @@ function Nav() {
               Home
             </Link>
 
-            <Link className="navLink" to="/schedule">
+            <Link className="navSchedule" to="/schedule">
               Schedule
             </Link>
             
-            <Link className="navLink" to="/appointments">
+            <Link className="navAppointments" to="/appointments">
               Appointments
             </Link>
 

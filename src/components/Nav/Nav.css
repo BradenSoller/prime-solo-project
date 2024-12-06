@@ -44,8 +44,8 @@
 
 .navHome{
 position: absolute;
-top:65px;
-left:850px;
+top:8%;
+left:55%;
     color: #f2f2f2;
 }
 
@@ -61,6 +61,18 @@ left:850px;
       position: absolute;
      left: 1250px;
      top:60px
+}
 
-      
+.navSchedule {
+  position: absolute;
+top:8%;
+left:60%;
+    color: #f2f2f2;
+}
+
+.navAppointments {
+    position: absolute;
+top:8%;
+left:67%;
+    color: #f2f2f2;
 }
