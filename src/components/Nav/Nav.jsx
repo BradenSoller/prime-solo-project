@@ -4,8 +4,8 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { Button } from '@mui/material';
-
+import { Button, IconButton } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 function Nav() {
   const user = useSelector((store) => store.user);
 
@@ -75,16 +75,16 @@ function Nav() {
               Appointments
             </Link>
 
-            <Link className="navLink" to="/services">
+            <Link className="navServices" to="/services">
               Services
             </Link>
-            <Link className="navLink" to="/about">
+            <Link className="navAbout" to="/about">
               About
             </Link>
 
          
 
-            <LogOutButton className="navLogOut" />
+            <IconButton><AccountCircleIcon className='navIcon' fontSize='large'/> <LogOutButton className="navLogOut" /></IconButton>
           </>
         )}
    

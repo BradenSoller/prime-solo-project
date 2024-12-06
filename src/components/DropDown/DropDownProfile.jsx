@@ -1,4 +1,5 @@
 import React from "react";
+import LogOutButton from "../LogOutButton/LogOutButton";
 
 
 
@@ -7,7 +8,7 @@ export function DropDownProfile() {
     return (
         <div className="Dropdown">
         <ul>
-            <li>Log Out</li>
+            <li><LogOutButton/></li>
             <li>MyAppointments</li>
             </ul>
         </div>

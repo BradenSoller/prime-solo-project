@@ -42,37 +42,58 @@
   background-color: #b57a04;
 }
 
-.navHome{
-position: absolute;
-top:8%;
-left:55%;
-    color: #f2f2f2;
+.navHome {
+  position: absolute;
+  top: 8%;
+  left: 55%;
+  color: #f2f2f2;
 }
 
 .navHome:hover {
   background-color: #b57a04;
 }
 
-.navLogOut{
-    background-color: #ff6308;
-    outline: 0;
-      font-size: 15px;
-      border: none;
-      position: absolute;
-     left: 1250px;
-     top:60px
+.navLogOut {
+  background-color: #ff6308;
+  outline: 0;
+  font-size: 15px;
+  border: none;
+  position: absolute;
+  left: 1270px;
+  top: 60px;
 }
 
 .navSchedule {
   position: absolute;
-top:8%;
-left:60%;
-    color: #f2f2f2;
+  top: 8%;
+  left: 60%;
+  color: #f2f2f2;
 }
 
+
 .navAppointments {
+  position: absolute;
+  top: 8%;
+  left: 67%;
+  color: #f2f2f2;
+}
+
+.navServices {
+  position: absolute;
+  top: 8%;
+  left: 77%;
+  color: #f2f2f2;
+}
+
+.navAbout {
     position: absolute;
-top:8%;
-left:67%;
-    color: #f2f2f2;
+  top: 8%;
+  left: 84%;
+  color: #f2f2f2;
+}
+
+.navIcon{
+  position: absolute;
+  top: 83%;
+  left: -20%;
 }
