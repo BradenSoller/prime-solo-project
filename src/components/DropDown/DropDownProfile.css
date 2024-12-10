@@ -1,5 +1,9 @@
 .Dropdown {
 position: absolute;
 top: 2%;
-right: 5%
+right: 5%;
+padding: 15%;
+border-radius: 15px;
+border: 1px, solid, grey;
+list-style-type: none;
 }

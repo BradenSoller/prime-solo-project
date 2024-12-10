@@ -97,3 +97,9 @@
   top: 83%;
   left: -20%;
 }
+
+.Dropdown {
+position: absolute;
+top: 2%;
+right: 5%
+}
