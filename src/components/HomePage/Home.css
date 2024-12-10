@@ -174,9 +174,3 @@ width: 600px;
     transform: scale(1.03);
 }
 
-.dropDownMenu {
-position: absolute;
-top: 10%;
-right: 2%;
-list-style-type: none;
-}

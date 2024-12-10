@@ -14,7 +14,6 @@ function Nav() {
 
 
 
- 
 
   return (
     <div className="nav">
@@ -53,11 +52,11 @@ function Nav() {
               About
             </Link>
 
-          <Link className="navLink" to="/login">
-            Login / Register
-          </Link>
+            <Link className="navLink" to="/login">
+              Login / Register
+            </Link>
           </>
-          
+
 
         )}
 
@@ -71,7 +70,7 @@ function Nav() {
             <Link className="navSchedule" to="/schedule">
               Schedule
             </Link>
-            
+
             <Link className="navAppointments" to="/appointments">
               Appointments
             </Link>
@@ -83,14 +82,16 @@ function Nav() {
               About
             </Link>
 
-         
 
-            <IconButton><AccountCircleIcon className='navIcon' fontSize='large'/> <LogOutButton className="navLogOut" /></IconButton>
+            <div className='dropDownMenu'>
+              <IconButton><AccountCircleIcon className='navIcon' fontSize='large' />
+                <DropDownProfile /> <LogOutButton className="navLogOut" /></IconButton>
+            </div>
           </>
         )}
-   
 
-       
+
+
       </div>
     </div>
   );

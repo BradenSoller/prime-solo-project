@@ -196,7 +196,7 @@ history.push('/schedule')
       </div>
       </div>
       <div className='dropDownMenu'>
-        <DropDownProfile />
+   
       </div>
 </div>
   
