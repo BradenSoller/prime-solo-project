@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Button, IconButton } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { DropDownProfile } from '../DropDown/DropDownProfile';
 function Nav() {
   const user = useSelector((store) => store.user);
 
