@@ -6,7 +6,9 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Button, IconButton } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { DropDownProfile } from '../DropDown/DropDownProfile';
+import DropDownProfile from '../DropDown/DropDownProfile';
+
+
 function Nav() {
   const user = useSelector((store) => store.user);
 
@@ -83,10 +85,14 @@ function Nav() {
             </Link>
 
 
-            <div className='dropDownMenu'>
               <IconButton><AccountCircleIcon className='navIcon' fontSize='large' />
-                <DropDownProfile /> <LogOutButton className="navLogOut" /></IconButton>
-            </div>
+                 <LogOutButton className="navLogOut" /></IconButton>
+            <div className='dropDownMenu'>
+              
+              
+               <DropDownProfile/>
+                
+</div>
           </>
         )}
 

@@ -106,7 +106,12 @@ right: 5%
 
 .dropDownMenu {
 position: absolute;
-top: 10%;
+top: 13%;
 right: 2%;
 list-style-type: none;
+
+}
+
+.menu{
+  
 }
