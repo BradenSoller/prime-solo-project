@@ -3,17 +3,42 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Button, IconButton } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import DropDownProfile from '../DropDown/DropDownProfile';
-
+import { useState } from 'react';
+import { useRef } from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
   let history = useHistory()
 
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+     
+  
+   
+  
+      const handleAppointment = () => {
+        history.push('/appointments')
+        setAnchorEl(null);
+      }
+  
+  
+  
+     
+      
 
 
 
@@ -85,13 +110,34 @@ function Nav() {
             </Link>
 
 
-              <IconButton><AccountCircleIcon className='navIcon' fontSize='large' />
-                 <LogOutButton className="navLogOut" /></IconButton>
+
+                 {/* <LogOutButton className="navLogOut" /> */}
             <div className='dropDownMenu'>
-              
-              
-               <DropDownProfile/>
-                
+              <Button
+                id="basic-button"
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+              >
+                 <AccountCircleIcon className='navIcon' fontSize='large' /> 
+               
+            </Button>
+              <div className='dropDownPlacement'>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  'aria-labelledby': 'basic-button',
+                }}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleAppointment}>My account</MenuItem>
+                <MenuItem onClick={handleClose}><LogOutButton/></MenuItem>
+                </Menu>
+              </div>
 </div>
           </>
         )}
