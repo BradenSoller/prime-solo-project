@@ -10,10 +10,14 @@ import Stack from '@mui/material/Stack';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useState } from 'react';
 import { useRef } from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 export default function DropDownProfile() {
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
+
+      const history = useHistory()
 
     const handleToggle = () => {
         setOpen(true);
@@ -23,15 +27,24 @@ export default function DropDownProfile() {
         setOpen(false);
     };
 
+    const handleAppointment = () => {
+        history.push('/appointments')
+    }
+
+
 
     function handleListKeyDown(event) {
         if (event.key === 'Tab') {
             event.preventDefault();
+            
             setOpen(false);
         } else if (event.key === 'Escape') {
             setOpen(false);
         }
     }
+
+
+    
 
     // return focus to the button when we transitioned from !open -> open
     const prevOpen = React.useRef(open);
@@ -48,7 +61,7 @@ export default function DropDownProfile() {
             <Paper>
                 <MenuList>
                   
-                    <MenuItem>My Appoinments</MenuItem>
+                    <MenuItem onClick={handleAppointment}>My Appoinments</MenuItem>
                     <MenuItem><LogOutButton/></MenuItem>
                 </MenuList>
             </Paper>
