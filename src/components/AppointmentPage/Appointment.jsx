@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import './Appointments.css'
 import ScheduleForm from "../Schedule/Schedule Form"
 import Button from '@mui/material/Button';
-import { IconButton, MenuItem } from "@mui/material"
+import { Icon, IconButton, MenuItem } from "@mui/material"
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { styled } from '@mui/material/styles';
@@ -24,6 +24,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 
 
@@ -63,6 +64,12 @@ export default function AppointmentPage({ appointment }) {
     console.log("user:", user);
 
     const [open, setOpen] = useState(false);
+
+
+    const handleSchedule = () => {
+        history.push('/schedule')
+       
+    }
 
 
 
@@ -187,6 +194,8 @@ export default function AppointmentPage({ appointment }) {
                     </TableContainer>
                 }
 
+                <div><IconButton onClick={handleSchedule}><AddCircleIcon/></IconButton></div>
+
 
 
                 <Fragment>
@@ -267,6 +276,7 @@ export default function AppointmentPage({ appointment }) {
 
 
                                         )
+
 
 
                                     })}
@@ -403,8 +413,8 @@ export default function AppointmentPage({ appointment }) {
 
                                     {user.isAdmin && WIPAppointments.map((appointment) => {
                                         return (
-
-
+                                        
+<div>
                                             <StyledTableRow key={appointment.id}>
                                                 <StyledTableCell>{JSON.stringify(appointment.time_completed.slice(0, -14))}</StyledTableCell>
                                                 <StyledTableCell>{appointment.first_name}</StyledTableCell>
@@ -427,7 +437,9 @@ export default function AppointmentPage({ appointment }) {
                                             </StyledTableRow>
 
 
+                                        </div>
                                         )
+                                      
 
 
                                     })}
@@ -506,6 +518,8 @@ export default function AppointmentPage({ appointment }) {
                                                     </IconButton></StyledTableCell>
 
                                             </StyledTableRow>
+
+                                       
 
 
                                         )
