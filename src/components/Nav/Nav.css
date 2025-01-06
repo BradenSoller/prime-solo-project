@@ -115,7 +115,7 @@ list-style-type: none;
 
 .dropDownPlacement{
 position: absolute;
-top: 5%;
+top: -40px;
 right: 0%;
 
 }

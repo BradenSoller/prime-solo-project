@@ -134,7 +134,7 @@ function Nav() {
                   'aria-labelledby': 'basic-button',
                 }}
               >
-                <MenuItem onClick={handleAppointment}>My account</MenuItem>
+                <MenuItem onClick={handleAppointment}>Appointments</MenuItem>
                   <MenuItem className='LogoutButtonNav' onClick={handleClose}><LogOutButton/></MenuItem>
                 </Menu>
               </div>
