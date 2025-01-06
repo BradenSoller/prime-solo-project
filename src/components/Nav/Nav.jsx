@@ -10,6 +10,7 @@ import { useRef } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { colors } from '@mui/material';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -121,8 +122,8 @@ function Nav() {
                 onClick={handleClick}
               >
                 
-                <AccountCircleIcon className='navIcon' fontSize='large' /> 
-               
+                <AccountCircleIcon className='navIcon' sx={{ color:'black' }}  fontSize='large' /> 
+              
             </Button>
               <div className='dropDownPlacement'>
               <Menu
