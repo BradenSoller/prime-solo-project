@@ -120,7 +120,8 @@ function Nav() {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
               >
-                 <AccountCircleIcon className='navIcon' fontSize='large' /> 
+                
+                <AccountCircleIcon className='navIcon' fontSize='large' /> 
                
             </Button>
               <div className='dropDownPlacement'>
@@ -133,9 +134,8 @@ function Nav() {
                   'aria-labelledby': 'basic-button',
                 }}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleAppointment}>My account</MenuItem>
-                <MenuItem onClick={handleClose}><LogOutButton/></MenuItem>
+                  <MenuItem className='LogoutButtonNav' onClick={handleClose}><LogOutButton/></MenuItem>
                 </Menu>
               </div>
 </div>

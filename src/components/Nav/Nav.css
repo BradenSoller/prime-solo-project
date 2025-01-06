@@ -119,3 +119,10 @@ top: 5%;
 right: 0%;
 
 }
+
+
+
+.LogoutButtonNav{
+  position: absolute;
+  left: -18%
+}
