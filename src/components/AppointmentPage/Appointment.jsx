@@ -194,7 +194,7 @@ export default function AppointmentPage({ appointment }) {
                     </TableContainer>
                 }
 
-                <div className="AddAppointment"><Button color="warning" onClick={handleSchedule}><AddCircleIcon fontSize='large'  /></Button></div>
+                <div className="AddAppointment"><Button sx={{ color:"black" }} onClick={handleSchedule}><AddCircleIcon fontSize='large'  /></Button></div>
 
 
 
