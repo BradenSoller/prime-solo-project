@@ -194,7 +194,7 @@ export default function AppointmentPage({ appointment }) {
                     </TableContainer>
                 }
 
-                <div><IconButton onClick={handleSchedule}><AddCircleIcon/></IconButton></div>
+                <div className="AddAppointment"><IconButton onClick={handleSchedule}><AddCircleIcon fontSize='large'  /></IconButton></div>
 
 
 
