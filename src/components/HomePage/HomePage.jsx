@@ -135,6 +135,13 @@ history.push('/schedule')
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel> */}
+
+
+
+      <div className='homeImageOne'>
+        <img height={800} width={1600} src="/HomePagePic.JPG" />
+
+      </div>
 <div className='cardPlacement'>
       <div className="container">
         <div className='h2'>
@@ -155,10 +162,7 @@ history.push('/schedule')
     
      
      
-      <div className='homeImageOne'>
-        <img height={800} width={1600} src="/HomePagePic.JPG" />
-
-      </div>
+      
 
       <div className='homeImageTwo'>
         <SimpleImageSlider
@@ -168,18 +172,23 @@ history.push('/schedule')
           height={400}
           images={HomeImages}
         />
+
+
       <div className='ServicesCard'> 
       <div className='services'>
 
        <h2>Services</h2>
         <p>Rock removal <br /> <br />Deck staining <br /> <br /> Weeding <br /> <br /> Tree Trimming <br /> <br />Brush/junk removal</p>
         
-
     <div className='learnMore'>
         <Button color="warning" className='learnMore' onClick={handleHomeService} ><b>LEARN MORE ...</b></Button>
         </div>
       </div>
-      </div>
+        </div>
+        
+
+
+
       <div className='contactHome'> 
         <h2>Contact us !</h2>
       </div>
