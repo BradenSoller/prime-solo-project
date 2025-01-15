@@ -37,7 +37,7 @@ float: right;
         margin: 50px;
            position: absolute;
     right: -130%;
-    bottom: -12%;
+    bottom: -15%;
 
 }
 .h2 {
@@ -105,10 +105,11 @@ h2{
 
 .h2 {
     position: absolute;
-        left: 230px;
-        top: 140px;
+        left: 91.7%;
+        top: 700%;
         width: 600px;
         text-decoration: underline;
+        color: white;
     }
 
     .homePageText{
@@ -131,29 +132,30 @@ width: 600px;
     transition: 90ms ease-in-out;
     margin: 80px;
     position: absolute;
-        left: .5%;
-        top: 80px;      
+        left: 55%;
+        top: 550%;      
 }
 
     
 .contactHome {
     position: absolute;
-        left: -390px;
-        bottom: -650px;
+        left: 315px;
+        bottom: -200px;
         width: 600px;
 }
 
 .contactNumber{
     position: absolute;
-        left: -190px;
-        bottom: -615px;
+        left: 550px;
+        bottom: -165px;
         width: 600px;
+       
 }
 
 .contactEmail{
     position: absolute;
-    left: -50px;
-    bottom: -615px;
+    left: 700px;
+    bottom: -163.5px;
     width: 600px;
 }
 
@@ -173,3 +175,6 @@ width: 600px;
     transform: scale(1.03);
 }
 
+.homePageText{
+    color: white;
+}

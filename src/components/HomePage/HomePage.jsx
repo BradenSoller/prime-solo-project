@@ -139,7 +139,7 @@ history.push('/schedule')
 
 
       <div className='homeImageOne'>
-        <img height={800} width={1600} src="/HomePagePic.JPG" />
+        <img height={800} width={1600} src="/RemakeHomePage.JPG" />
 
       </div>
 <div className='cardPlacement'>
