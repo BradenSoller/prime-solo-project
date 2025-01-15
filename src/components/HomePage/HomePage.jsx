@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
 import { useState } from 'react';
 import DropDownProfile from '../DropDown/DropDownProfile';
+import { FitScreen } from '@mui/icons-material';
 
 
 
@@ -134,6 +135,13 @@ history.push('/schedule')
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel> */}
+
+
+
+      <div className='homeImageOne'>
+        <img height={800} width={1600} src="/RemakeHomePage.JPG" />
+
+      </div>
 <div className='cardPlacement'>
       <div className="container">
         <div className='h2'>
@@ -153,17 +161,10 @@ history.push('/schedule')
       
     
      
+     
       
-      
-      {/* <div className='homeImageOne'>
-        <img height={400} width={550} src="/rock-home.jpg" />
-      </div> */}
+
       <div className='homeImageTwo'>
-        <img height={400} width={550} src="/About.jpg" />
-
-      </div>
-
-      <div className='homeImageOne'>
         <SimpleImageSlider
           autoPlay 
           autoPlayDelay={2.5}
@@ -171,18 +172,23 @@ history.push('/schedule')
           height={400}
           images={HomeImages}
         />
+
+
       <div className='ServicesCard'> 
       <div className='services'>
 
        <h2>Services</h2>
         <p>Rock removal <br /> <br />Deck staining <br /> <br /> Weeding <br /> <br /> Tree Trimming <br /> <br />Brush/junk removal</p>
         
-
     <div className='learnMore'>
         <Button color="warning" className='learnMore' onClick={handleHomeService} ><b>LEARN MORE ...</b></Button>
         </div>
       </div>
-      </div>
+        </div>
+        
+
+
+
       <div className='contactHome'> 
         <h2>Contact us !</h2>
       </div>

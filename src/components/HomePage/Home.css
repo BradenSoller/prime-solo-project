@@ -36,8 +36,8 @@ float: right;
         transition: 90ms ease-in-out;
         margin: 50px;
            position: absolute;
-    right: 17.5%;
-    bottom: -136%;
+    right: -130%;
+    bottom: -15%;
 
 }
 .h2 {
@@ -70,8 +70,8 @@ h2{
 
 .homeImageOne {
     position: absolute;
-        right: 5%;
-        top: 22.3%;
+        right: 0%;
+        top: 12.9%;
         border: 5px solid;
         padding: 0px;
         padding-bottom: 0px;
@@ -81,8 +81,8 @@ h2{
 
 .homeImageTwo {
     position: absolute;
-        left: 7.6%;
-        bottom: -34%;
+        left: 4.6%;
+        bottom: -84%;
         border: 5px solid;
         padding: 0px;
         padding-bottom: 0px;  
@@ -105,10 +105,11 @@ h2{
 
 .h2 {
     position: absolute;
-        left: 230px;
-        top: 140px;
+        left: 91.7%;
+        top: 700%;
         width: 600px;
         text-decoration: underline;
+        color: white;
     }
 
     .homePageText{
@@ -127,34 +128,34 @@ width: 600px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 2px 4px rgba(3, 3, 0, 0.4);
     border-radius: 8px;
     transition: 90ms ease-in-out;
     margin: 80px;
     position: absolute;
-        left: .5%;
-        top: 80px;      
+        left: 55%;
+        top: 550%;      
 }
 
     
 .contactHome {
     position: absolute;
-        left: -390px;
-        bottom: -650px;
+        left: 315px;
+        bottom: -200px;
         width: 600px;
 }
 
 .contactNumber{
     position: absolute;
-        left: -190px;
-        bottom: -615px;
+        left: 550px;
+        bottom: -165px;
         width: 600px;
+       
 }
 
 .contactEmail{
     position: absolute;
-    left: -50px;
-    bottom: -615px;
+    left: 700px;
+    bottom: -163.5px;
     width: 600px;
 }
 
@@ -174,3 +175,6 @@ width: 600px;
     transform: scale(1.03);
 }
 
+.homePageText{
+    color: white;
+}
