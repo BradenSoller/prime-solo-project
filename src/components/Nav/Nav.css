@@ -71,6 +71,7 @@
 }
 
 
+
 .navAppointments {
   position: absolute;
   top: 8%;
@@ -106,8 +107,8 @@ right: 5%
 
 .dropDownMenu {
 position: absolute;
-top: 5%;
-right: 0%;
+top: 6.3%;
+right: 3%;
 list-style-type: none;
 
 }
@@ -115,7 +116,7 @@ list-style-type: none;
 
 .dropDownPlacement{
 position: absolute;
-top: -40px;
+top: 10%;
 right: 0%;
 
 }
@@ -125,4 +126,9 @@ right: 0%;
 .LogoutButtonNav{
   position: absolute;
   left: -18%
+}
+
+
+.AccountCircle{
+
 }

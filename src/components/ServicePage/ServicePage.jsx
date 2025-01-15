@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import { useEffect } from 'react';
+
 // This is one of our simplest components
 // It doesn't have local state
 // It doesn't dispatch any redux actions or display any part of redux state
@@ -127,8 +128,8 @@ function ServicePage() {
       <SimpleImageSlider
         width={500}
         height={400}
-        images={MulchImages}
-        showBullets={true}
+          images={MulchImages}
+          showBullets={true}
         showNavs={true}
         />
       </div>
@@ -149,9 +150,14 @@ function ServicePage() {
         <SimpleImageSlider
           width={500}
           height={400}
+          showNavs={true}
           images={RockImages}
           showBullets={true}
-          showNavs={true}
+          navMargin={400}
+          navStyle={2}
+          
+          
+          
        
       
         />

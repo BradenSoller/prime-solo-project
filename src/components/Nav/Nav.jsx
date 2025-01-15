@@ -12,6 +12,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { colors } from '@mui/material';
 
+
 function Nav() {
   const user = useSelector((store) => store.user);
 
@@ -120,10 +121,11 @@ function Nav() {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-              >
                 
-                <AccountCircleIcon className='navIcon' sx={{ color:'black' }}  fontSize='large' /> 
+              >
               
+           <AccountCircleIcon  sx={{ color: 'black' }} fontSize='large' /> 
+                
             </Button>
               <div className='dropDownPlacement'>
               <Menu
@@ -133,7 +135,9 @@ function Nav() {
                 onClose={handleClose}
                 MenuListProps={{
                   'aria-labelledby': 'basic-button',
+                  
                 }}
+               
               >
                 <MenuItem onClick={handleAppointment}>Appointments</MenuItem>
                   <MenuItem className='LogoutButtonNav' onClick={handleClose}><LogOutButton/></MenuItem>
