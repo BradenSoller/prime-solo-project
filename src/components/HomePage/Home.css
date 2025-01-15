@@ -167,9 +167,7 @@ width: 600px;
         transition: 90ms ease-in-out;
 }
 
-.cardPlacement:hover {
-    transform: scale(1.03);
-}
+
 
 .ServicesCard:hover {
     transform: scale(1.03);
