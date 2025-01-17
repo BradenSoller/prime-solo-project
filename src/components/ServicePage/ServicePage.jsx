@@ -130,7 +130,9 @@ function ServicePage() {
         height={400}
           images={MulchImages}
           showBullets={true}
-        showNavs={true}
+          showNavs={true}
+          navMargin={440}
+          navStyle={2}
         />
       </div>
       <Button variant='contained' color="warning" className='ScheduleService' onClick={goToAppointments}>schedule now</Button>
@@ -141,6 +143,8 @@ function ServicePage() {
           images={DeckImages}
           showBullets={true}
           showNavs={true}
+          navMargin={440}
+          navStyle={2}
         />
         
       </div>
@@ -153,7 +157,7 @@ function ServicePage() {
           showNavs={true}
           images={RockImages}
           showBullets={true}
-          navMargin={400}
+          navMargin={440}
           navStyle={2}
           
           
@@ -174,6 +178,8 @@ function ServicePage() {
           images={BrushImages}
           showBullets={true}
           showNavs={true}
+          navMargin={440}
+          navStyle={2}
         />
 
       </div>
@@ -186,8 +192,10 @@ function ServicePage() {
           width={500}
           height={400}
           images={TrimmingImages}
-          showBullets={true}
           showNavs={true}
+          showBullets={true}
+          navMargin={440}
+          navStyle={2}
         />
 
       </div>
@@ -202,6 +210,8 @@ function ServicePage() {
           images={WeedingImages}
           showBullets={true}
           showNavs={true}
+          navMargin={440}
+          navStyle={2}
         />
 
       </div>
