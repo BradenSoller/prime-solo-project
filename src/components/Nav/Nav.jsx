@@ -10,6 +10,8 @@ import { useRef } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { purple, red } from '@mui/material/colors';
+
 
 
 
@@ -86,7 +88,11 @@ function Nav() {
             </Link>
 
             <Button
-              className='registerOrLogin' variant='contained'  onClick={handleLogin}>
+              className='registerOrLogin' variant='contained' style={{
+             
+                backgroundColor: "black",
+              
+              }} onClick={handleLogin}>
            
                 Login / Register
               
