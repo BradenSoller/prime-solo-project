@@ -1,5 +1,7 @@
 .nav {
   /* flex box layout */
+   position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,10 +12,12 @@
 }
 
 .nav a {
+ 
   text-decoration: none;
 }
 
 .nav-title {
+  
   font-size: 24px;
   font-weight: 700;
   color: #f2f2f2;
@@ -44,8 +48,8 @@
 
 .navHome {
   position: absolute;
-  top: 8%;
-  left: 55%;
+  top: 60%;
+  left: 53%;
   color: #f2f2f2;
 }
 
@@ -60,12 +64,12 @@
   border: none;
   position: absolute;
   left: 1270px;
-  top: 60px;
+  top: 60%;
 }
 
 .navSchedule {
   position: absolute;
-  top: 8%;
+  top: 60%;
   left: 60%;
   color: #f2f2f2;
 }
@@ -74,28 +78,28 @@
 
 .navAppointments {
   position: absolute;
-  top: 8%;
+  top: 60%;
   left: 67%;
   color: #f2f2f2;
 }
 
 .navServices {
   position: absolute;
-  top: 8%;
+  top: 60%;
   left: 77%;
   color: #f2f2f2;
 }
 
 .navAbout {
     position: absolute;
-  top: 8%;
+  top: 60%;
   left: 84%;
   color: #f2f2f2;
 }
 
 .navIcon{
   position: absolute;
-  top: 83%;
+  top: 60%;
   left: -20%;
 }
 
@@ -107,7 +111,7 @@ right: 5%
 
 .dropDownMenu {
 position: absolute;
-top: 6.3%;
+top: 48%;
 right: 3%;
 list-style-type: none;
 
@@ -134,8 +138,12 @@ right: 0%;
 }
 
 .registerOrLogin{
-  width: 180px;
+  position: absolute;
+  left: -.5%;
+  width: 170px;
+
   background-color: black;
 
 
 }
+
