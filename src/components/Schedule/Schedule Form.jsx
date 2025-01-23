@@ -103,7 +103,7 @@ export default function ScheduleForm({ appointment }) {
         setDescription('how long does this process take ?')
         setBudget('$1,000')
 
-        setService('Deck Staining')
+        setService(3)
     }
 
     return (

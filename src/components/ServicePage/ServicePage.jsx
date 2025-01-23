@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -15,11 +16,38 @@ import { useEffect } from 'react';
 
 
 function ServicePage() {
+
+  const [service, setService] = useState();
+
+  <select className="servicesForm" value={service} required onChange={(e) => setService(e.target.value)}>
+    <option value={0}>select</option>
+    <option value={1}>Rock Removal</option>
+    <option value={2}>Deck Staining</option>
+    <option value={3}>Weeding</option>
+    <option value={4}>Tree/Bush Triming </option>
+    <option value={5}>Brush/Junk Removal</option>
+    <option value={6}>Mulching</option>
+    <option value={7}>Snow Removal</option>
+
+  </select>
+
+      const dispatch = useDispatch();
+
+  const getServices = () => {
+    dispatch({ type: "SAGA/GET_SERVICES" });
+  };
+
+
   const history = useHistory()
   
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  useEffect(() => {
+    getServices()
+
+  }, []);
 
   const MulchImages = [
     { url: "before-multch.jpg" },
@@ -55,8 +83,12 @@ function ServicePage() {
   ]
   const goToAppointments = () => {
     history.push(`./schedule`)
+    setService(3)
+console.log(setService);
+
     
- }
+  }
+  
   return (
 <div>
       <div className='MulchCard'>

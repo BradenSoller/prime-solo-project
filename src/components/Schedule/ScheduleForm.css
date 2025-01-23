@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:ital,wght@1,500&display=swap');
+
+
 .input, select{
    
     width: 98%;
@@ -52,7 +55,10 @@ body {
 
 .scheduleHeading {
     text-align: center;
-    text-decoration: underline;
+
+     font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
 }
 .LogInScheduleCard{
     padding-left: 100px;
