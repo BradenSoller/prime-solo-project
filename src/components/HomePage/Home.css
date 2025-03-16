@@ -24,9 +24,10 @@ float: right;
 }
 .ServicesCard{
    
-    width: 250px;
-        height: 400px;
-        background-color: var(--greenish);
+    width: 400px;
+        height: 500px;
+        /* background-color: var(--greenish); */
+        background-color: darkgray;
         font-family: var(--srcsansreg);
         overflow: hidden;
         display: flex;
@@ -37,7 +38,7 @@ float: right;
         margin: 50px;
            position: absolute;
     right: -130%;
-    bottom: -15%;
+    bottom: -25%;
 
 }
 .h2 {
