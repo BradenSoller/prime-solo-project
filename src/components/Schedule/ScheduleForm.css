@@ -65,7 +65,7 @@ body {
     padding-right: 50px;
      width: 550px;
      height: 60px;
-     background-color: var(--greenish);
+          background-color: lightgray;
      font-family: var(--srcsansreg);
       overflow: hidden;
     display: flex;
@@ -102,7 +102,7 @@ left: 67%
 .ScheduleCard {
         width: 1000px;
             height: 950px;
-            background-color: var(--greenish);
+                 background-color: darkgray;
             font-family: var(--srcsansreg);
             overflow: hidden;
             display: flex;

@@ -222,7 +222,7 @@ position: absolute;
 .MulchCard { 
     width: 600px;
         height: 450px;
-        background-color: var(--greenish);
+        background-color: darkgray;
         font-family: var(--srcsansreg);
         overflow: hidden;
         display: flex;
@@ -245,7 +245,7 @@ position: absolute;
 .DeckCard {
         width: 600px;
             height: 450px;
-            background-color: var(--greenish);
+          background-color: darkgray;
             font-family: var(--srcsansreg);
             overflow: hidden;
             display: flex;
@@ -266,7 +266,7 @@ position: absolute;
 .RockCard {
     width: 600px;
         height: 450px;
-        background-color: var(--greenish);
+      background-color: darkgray;
         font-family: var(--srcsansreg);
         overflow: hidden;
         display: flex;
@@ -287,7 +287,7 @@ position: absolute;
 .BrushCard { 
         width: 600px;
             height: 450px;
-            background-color: var(--greenish);
+      background-color: darkgray;
             font-family: var(--srcsansreg);
             overflow: hidden;
             display: flex;
@@ -308,7 +308,7 @@ position: absolute;
 .TrimmingCard {
     width: 600px;
         height: 450px;
-        background-color: var(--greenish);
+            background-color: darkgray;
         font-family: var(--srcsansreg);
         overflow: hidden;
         display: flex;
@@ -329,7 +329,7 @@ position: absolute;
 .WeedingCard {
     width: 600px;
     height: 450px;
-    background-color: var(--greenish);
+      background-color: darkgray;
     font-family: var(--srcsansreg);
     overflow: hidden;
     display: flex;

@@ -188,7 +188,6 @@ history.push('/schedule')
         
 
 
-
       <div className='contactHome'> 
         <h2>Contact us !</h2>
       </div>
